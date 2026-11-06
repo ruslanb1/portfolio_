@@ -4,672 +4,35 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Резюме и портфолио | Басантаев Руслан Нургалеевич</title>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
-<style>
-        /* Шрифты */
-        @import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&display=swap');
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            background-color: #f5f5f0;
-            color: #1a1a1a;
-            line-height: 1.5;
-            font-family: 'Libre Caslon Text', 'Times New Roman', Times, serif;
-            font-size: 16px;
-            padding: 30px;
-            position: relative;
-        }
-        
-        /* Эффект бумаги */
-        body:before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(0,0,0,0.05)" stroke-width="0.5"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
-            opacity: 0.3;
-            z-index: -1;
-            pointer-events: none;
-        }
-        
-        .resume-container {
-            max-width: 1100px;
-            margin: 0 auto;
-            background-color: #ffffff;
-            border: 1px solid #cccccc;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            position: relative;
-            padding: 40px 50px;
-            border-top: 8px solid #2c3e50;
-        }
-        
-        /* Секция с фото */
-        .photo-section {
-            text-align: center;
-            margin-bottom: 40px;
-            padding-bottom: 30px;
-            border-bottom: 2px solid #2c3e50;
-        }
-        
-        .photo-frame {
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            border: 4px solid #333333;
-            margin: 0 auto 25px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            position: relative;
-        }
-        
-        .photo-frame:before {
-            content: "";
-            position: absolute;
-            top: 5px;
-            left: 5px;
-            right: 5px;
-            bottom: 5px;
-            border: 2px solid #ffffff;
-            border-radius: 50%;
-            z-index: 1;
-        }
-        
-        .photo {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: grayscale(30%);
-        }
-        
-        .name-title {
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-        }
-        
-        .name {
-            font-size: 2.2rem;
-            font-weight: 700;
-            margin-bottom: 8px;
-            color: #1a1a1a;
-            font-family: 'Libre Caslon Text', 'Times New Roman', Times, serif;
-        }
-        
-        .title {
-            font-size: 1.3rem;
-            font-weight: 400;
-            color: #333333;
-            margin-bottom: 15px;
-            position: relative;
-            display: inline-block;
-            padding: 0 20px;
-        }
-        
-        /* Основной контент */
-        .content {
-            display: flex;
-            position: relative;
-            margin-top: 20px;
-        }
-        
-        /* Левая колонка */
-        .left-column {
-            flex: 1;
-            padding-right: 50px;
-            border-right: 2px solid #cccccc;
-            text-align: right;
-        }
-        
-        /* Правая колонка */
-        .right-column {
-            flex: 2;
-            padding-left: 50px;
-        }
-        
-        /* Секции */
-        .section {
-            margin-bottom: 40px;
-            position: relative;
-        }
-        
-        .section-title {
-            font-size: 1.4rem;
-            color: #2c3e50;
-            margin-bottom: 25px;
-            position: relative;
-            padding-bottom: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-family: 'IBM Plex Mono', 'Courier New', monospace;
-        }
-        
-        .left-column .section-title {
-            text-align: right;
-        }
-        
-        .right-column .section-title {
-            text-align: left;
-        }
-        
-        .section-title:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            height: 3px;
-            background-color: #2c3e50;
-        }
-        
-        .left-column .section-title:after {
-            right: 0;
-            width: 80px;
-        }
-        
-        .right-column .section-title:after {
-            left: 0;
-            width: 80px;
-        }
-        
-        /* Элементы в секциях */
-        .item {
-            margin-bottom: 30px;
-            position: relative;
-        }
-        
-        .item-title {
-            font-weight: 700;
-            font-size: 1.15rem;
-            color: #2c3e50;
-            margin-bottom: 8px;
-            line-height: 1.4;
-        }
-        
-        .item-subtitle {
-            color: #555555;
-            margin-bottom: 10px;
-            font-style: italic;
-        }
-        
-        .item-date {
-            color: #2c3e50;
-            font-size: 0.95rem;
-            font-weight: 500;
-            margin-bottom: 12px;
-            font-family: 'IBM Plex Mono', 'Courier New', monospace;
-        }
-        
-        .item-description {
-            color: #333333;
-            line-height: 1.6;
-        }
-        
-        /* Контактная информация */
-        .contact-info {
-            list-style: none;
-        }
-        
-        .contact-info li {
-            margin-bottom: 18px;
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            font-family: 'IBM Plex Mono', 'Courier New', monospace;
-            font-size: 0.95rem;
-        }
-        
-        .left-column .contact-info li {
-            flex-direction: row-reverse;
-        }
-        
-        .contact-info i {
-            color: #2c3e50;
-            margin-left: 12px;
-            font-size: 1.1rem;
-            width: 24px;
-            text-align: center;
-        }
-        
-        .left-column .contact-info i {
-            margin-left: 0;
-            margin-right: 12px;
-        }
-        
-        /* Навыки */
-        .skill-list {
-            list-style: none;
-        }
-        
-        .skill-list li {
-            margin-bottom: 15px;
-            position: relative;
-            padding-right: 10px;
-        }
-        
-        .skill-list li:before {
-            content: "▪";
-            position: absolute;
-            right: -15px;
-            color: #2c3e50;
-        }
-        
-        /* Достижения и награды */
-        .achievement-list {
-            list-style: none;
-            counter-reset: achievement-counter;
-            padding-left: 0;
-        }
-        
-        .achievement-list li {
-            margin-bottom: 18px;
-            position: relative;
-            padding-left: 35px;
-            padding-right: 10px;
-            counter-increment: achievement-counter;
-        }
-        
-        .achievement-list li:before {
-            content: counter(achievement-counter) ".";
-            position: absolute;
-            left: 0;
-            top: 0;
-            font-weight: 700;
-            color: #2c3e50;
-            font-family: 'IBM Plex Mono', 'Courier New', monospace;
-            font-size: 1rem;
-        }
-        
-        /* Галерея документов */
-        .document-gallery {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .document-item {
-            width: 140px;
-            text-align: center;
-            cursor: pointer;
-            transition: transform 0.3s;
-            border: 1px solid #cccccc;
-            padding: 8px;
-            background-color: #f9f9f9;
-        }
-        
-        .document-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-        }
-        
-        .document-preview {
-            width: 100%;
-            height: 180px;
-            background-color: #f0f0f0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 8px;
-            overflow: hidden;
-            border: 1px solid #dddddd;
-        }
-        
-        .document-preview img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-        }
-        
-        .document-name {
-            font-size: 0.85rem;
-            color: #555555;
-            font-family: 'IBM Plex Mono', 'Courier New', monospace;
-            line-height: 1.3;
-        }
-        
-        /* Таблица достижений учеников */
-        .achievements-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-            font-family: 'IBM Plex Mono', 'Courier New', monospace;
-            font-size: 0.9rem;
-        }
-        
-        .achievements-table th {
-            background-color: #f0f0f0;
-            border: 1px solid #cccccc;
-            padding: 12px 15px;
-            text-align: left;
-            font-weight: 700;
-            color: #2c3e50;
-        }
-        
-        .achievements-table td {
-            border: 1px solid #cccccc;
-            padding: 12px 15px;
-            vertical-align: top;
-        }
-        
-        .achievements-table tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-        
-        .achievements-table tr:hover {
-            background-color: #f0f0f0;
-        }
-        
-        /* Модальное окно для документов */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.85);
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .modal-content {
-            max-width: 90%;
-            max-height: 90%;
-            background-color: #ffffff;
-            border-radius: 0;
-            overflow: hidden;
-            position: relative;
-            border: 2px solid #2c3e50;
-        }
-        
-        .modal-image {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        
-        .close-modal {
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            background-color: rgba(44, 62, 80, 0.8);
-            color: white;
-            border: none;
-            width: 30px;
-            height: 30px;
-            font-size: 1.2rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'IBM Plex Mono', 'Courier New', monospace;
-        }
-        
-        /* Адаптивность */
-        @media (max-width: 992px) {
-            .content {
-                padding: 0 10px;
-            }
-            
-            .left-column {
-                padding-right: 30px;
-            }
-            
-            .right-column {
-                padding-left: 30px;
-            }
-            
-            .resume-container {
-                padding: 30px;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .content {
-                flex-direction: column;
-            }
-            
-            .left-column {
-                padding-right: 0;
-                padding-bottom: 30px;
-                border-right: none;
-                border-bottom: 2px solid #cccccc;
-                text-align: left;
-            }
-            
-            .right-column {
-                padding-left: 0;
-                padding-top: 30px;
-            }
-            
-            .left-column .section-title {
-                text-align: left;
-            }
-            
-            .left-column .section-title:after {
-                left: 0;
-                right: auto;
-            }
-            
-            .contact-info li {
-                justify-content: flex-start;
-            }
-            
-            .left-column .contact-info li {
-                flex-direction: row;
-            }
-            
-            .left-column .contact-info i {
-                margin-right: 12px;
-                margin-left: 0;
-            }
-            
-            .skill-list li:before {
-                left: -15px;
-                right: auto;
-            }
-            
-            .name {
-                font-size: 1.8rem;
-            }
-            
-            .document-item {
-                width: 120px;
-            }
-            
-            body {
-                padding: 15px;
-            }
-            
-            .achievements-table {
-                display: block;
-                overflow-x: auto;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .photo-section {
-                margin-bottom: 30px;
-            }
-            
-            .photo-frame {
-                width: 140px;
-                height: 140px;
-            }
-            
-            .name {
-                font-size: 1.6rem;
-            }
-            
-            .title {
-                font-size: 1.1rem;
-            }
-            
-            .resume-container {
-                padding: 25px 20px;
-            }
-            
-            .section-title {
-                font-size: 1.2rem;
-            }
-            
-            .document-item {
-                width: 100px;
-            }
-            
-            .document-preview {
-                height: 140px;
-            }
-        }
-        
-        /* Футер */
-        footer {
-            margin-top: 50px;
-            padding-top: 25px;
-            border-top: 2px solid #2c3e50;
-            text-align: center;
-            font-size: 0.9rem;
-            color: #666666;
-            font-family: 'IBM Plex Mono', 'Courier New', monospace;
-        }
-        
-        .print-button {
-            display: inline-block;
-            background-color: #2c3e50;
-            color: white;
-            border: none;
-            padding: 10px 25px;
-            cursor: pointer;
-            font-size: 1rem;
-            margin-top: 15px;
-            font-family: 'IBM Plex Mono', 'Courier New', monospace;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-        
-        .print-button:hover {
-            background-color: #1a2530;
-        }
-        
-        /* Разделители */
-        .separator {
-            height: 1px;
-            background-color: #cccccc;
-            margin: 25px 0;
-            width: 100%;
-        }
-        
-        /* Подпись */
-        .signature {
-            margin-top: 40px;
-            text-align: right;
-            font-family: 'IBM Plex Mono', 'Courier New', monospace;
-            font-size: 0.9rem;
-            color: #333333;
-            position: relative;
-            padding-top: 40px;
-        }
-        
-        .signature-line {
-            width: 200px;
-            height: 1px;
-            background-color: #333333;
-            margin: 10px 0 5px auto;
-        }
-        
-        /* Ссылки */
-        a {
-            color: #2c3e50;
-            text-decoration: none;
-            border-bottom: 1px dashed #2c3e50;
-        }
-        
-        a:hover {
-            border-bottom: 1px solid #2c3e50;
-        }
-    
-/* Длинный профессиональный заголовок без изменения структуры макета */
-.name-title .title { max-width: 760px; line-height: 1.45; }
+<title>Руслан Басантаев — виртуальные лаборатории и физико-математическое моделирование</title>
 
-/* Единое раскрытие дополнительных разделов — наследует авторские цвета и шрифты. */
-.portfolio-details { margin: 0; padding: 0; }
-.portfolio-summary { display: block; cursor: pointer; list-style: none; position: relative; }
-.portfolio-summary::-webkit-details-marker { display: none; }
-.portfolio-summary .section-title { padding-right: 32px; margin-bottom: 0; }
-.portfolio-summary .section-title::before { content: "+"; position: absolute; right: 2px; top: 0; color: #2c3e50; font: 500 1.25rem/1.3 'IBM Plex Mono', monospace; }
-.portfolio-details[open] .portfolio-summary .section-title::before { content: "−"; }
-.portfolio-details[open] .portfolio-summary .section-title { margin-bottom: 22px; }
-.portfolio-summary:focus-visible { outline: 2px solid #2c3e50; outline-offset: 5px; }
-.portfolio-details > :not(summary) { animation: portfolio-reveal .18s ease-out; }
-@keyframes portfolio-reveal { from { opacity: .65; } to { opacity: 1; } }
-@media (prefers-reduced-motion: reduce) { .portfolio-details > :not(summary) { animation: none; } }
-@media print { .portfolio-details > :not(summary) { display: block !important; } .portfolio-summary .section-title::before { display: none; } }
-/* Только читабельность, без смены общего оформления. */
-.item-description, .skill-list li, .achievement-list li { font-size: 1rem; }
-.achievements-table { font-size: .9rem; }
-.modal-content { max-width: 92vw; max-height: 92vh; overflow: visible; background: transparent; border: 0; }
-.modal-image { max-width: 92vw; max-height: 90vh; width: auto; height: auto; object-fit: contain; background: white; }
-.close-modal { z-index: 2; }
-@media(max-width: 768px) { .portfolio-summary .section-title { padding-right: 38px; } }
-</style>
-<meta content="Профессиональное портфолио Руслана Нургалеевича Басантаева: виртуальные лаборатории, физико-математическое моделирование, интерактивные образовательные ресурсы, учебно-лабораторные стенды." name="description"/></head>
+<link href="./css/style.css" rel="stylesheet"/>
+<meta content="Методолог-разработчик интерактивных моделей, виртуальных лабораторий, цифровых двойников учебных стендов и ЭОР. Физика, электротехника, электроника, информатика; HTML5, JavaScript, SVG, Python и LaTeX." name="description"/><meta content="#2c3e50" name="theme-color"/></head>
 <body>
 <div class="resume-container">
-<section class="photo-section">
-<div class="photo-frame">
-<!-- Замените src на путь к вашему фото -->
-<img alt="Фото Басантаева Руслана Нургалеевича" class="photo" src="0dVAI6hSGItsMBfYwSBEcs9InA6BLkmw3Iu_71qno-vrOnsrX89E6ayIf4yFvtEb_t-EjavZJ-L7IXu1hBf8FfgZ.jpg"/>
-</div>
-<div class="name-title">
-<h1 class="name">Басантаев Руслан Нургалеевич</h1>
-<p class="title">Разработчик виртуальных лабораторий и интерактивных моделей · Методолог образовательных технологий</p>
-<p>Дата рождения: 17 апреля 1981 г.</p>
-</div>
-</section>
+<section class="portfolio-hero" id="top"><div class="hero-topline"><span class="hero-index">ПРОФЕССИОНАЛЬНОЕ ПОРТФОЛИО <span class="muted-index">/ 2026</span></span><nav aria-label="Разделы портфолио" class="hero-nav"><a href="#profile">Профиль</a><a href="#experience">Опыт</a><a href="#education">Образование</a><a href="#achievements">Достижения</a></nav></div>
+<div class="hero-layout"><div class="hero-copy"><div class="hero-kicker">ФИЗИКА · МАТЕМАТИКА · ОБРАЗОВАТЕЛЬНЫЕ ТЕХНОЛОГИИ</div><h1 class="name">Руслан<br/>Басантаев</h1><p class="hero-patronymic">Руслан Нургалеевич Басантаев</p><p class="hero-profession">Методолог и разработчик виртуальных лабораторий</p><p class="hero-description">Физико-математическое моделирование, интерактивные учебные среды и инженерные симуляторы. От математической модели до программного продукта и методики его применения.</p><div class="hero-actions"><a class="hero-main-link" href="mailto:basantaevr@gmail.com">Обсудить сотрудничество <span aria-hidden="true">↗</span></a><span class="hero-interview-note">Демонстрация разработок — на собеседовании</span></div></div>
+<div class="hero-aside"><div class="hero-photo"><img alt="Руслан Басантаев" src="0dVAI6hSGItsMBfYwSBEcs9InA6BLkmw3Iu_71qno-vrOnsrX89E6ayIf4yFvtEb_t-EjavZJ-L7IXu1hBf8FfgZ.jpg"/></div><div aria-hidden="true" class="hero-diagram"><div class="diagram-label">МОДЕЛИРОВАНИЕ КОЛЕБАТЕЛЬНЫХ ПРОЦЕССОВ <span>ƒ(t)</span></div><svg preserveaspectratio="xMidYMid meet" viewbox="0 0 420 165"><defs><pattern height="30" id="preciseGrid" patternunits="userSpaceOnUse" width="30"><path d="M 30 0 L 0 0 0 30" fill="none" stroke="#d6e1e8" stroke-width=".7"></path></pattern><lineargradient id="curveTone" x1="0" x2="1"><stop stop-color="#426e85"></stop><stop offset="1" stop-color="#95bec7"></stop></lineargradient></defs><rect fill="url(#preciseGrid)" height="165" width="420" x="0" y="0"></rect><path d="M 0 82 H 420 M 26 0 V 165" fill="none" stroke="#9db2c0" stroke-width="1"></path><g class="diagram-curve"><path d="M 26 82 C 39 82 43 28 68 28 S 104 136 135 136 S 172 28 204 28 S 239 136 270 136 S 307 28 337 28 S 373 136 402 136" fill="none" stroke="url(#curveTone)" stroke-linecap="round" stroke-width="2.8"></path></g><path class="curve-guide" d="M 26 82 C 39 82 43 28 68 28 S 104 136 135 136 S 172 28 204 28 S 239 136 270 136 S 307 28 337 28 S 373 136 402 136" fill="none" stroke="#a8c8cd" stroke-dasharray="3 9" stroke-width="1.1"></path><circle class="oscillator-point" fill="#e9af72" r="5.5"><animatemotion dur="11s" path="M 26 82 C 39 82 43 28 68 28 S 104 136 135 136 S 172 28 204 28 S 239 136 270 136 S 307 28 337 28 S 373 136 402 136" repeatcount="indefinite"></animatemotion></circle><text fill="#637b8c" font-size="11" x="33" y="14">x(t)</text><text fill="#637b8c" font-size="11" x="393" y="73">t</text><text fill="#8098a5" font-size="10" x="32" y="153">x(t) = A · sin(ωt + φ)</text></svg></div></div></div>
+<div class="hero-bottomline"><div><strong>≈ 200</strong><span>интерактивных учебных моделей</span></div><div><strong>с 2015</strong><span>преподавание физики и информатики</span></div><div><strong>HTML5 / SVG</strong><span>моделирование и визуализация</span></div></div></section>
 <section class="content">
 <div class="left-column">
 <div class="section">
 <h2 class="section-title">КОНТАКТНАЯ ИНФОРМАЦИЯ</h2>
 <ul class="contact-info">
 <li>
-<span>+7 (995) 945-34-89</span>
-<i class="fas fa-phone"></i>
+<a href="tel:+79959453489">+7 (995) 945-34-89</a>
+
 </li>
 <li>
-<span>basantaevr@gmail.com</span>
-<i class="fas fa-envelope"></i>
+<a href="mailto:basantaevr@gmail.com">basantaevr@gmail.com</a>
+
 </li>
 <li>
 <span>р. Башкортостан</span>
-<i class="fas fa-map-marker-alt"></i>
+
 </li>
 </ul>
 </div>
-<div class="section">
-<h2 class="section-title">ПРОФЕССИОНАЛЬНЫЕ НАПРАВЛЕНИЯ</h2>
-<div class="item">
-<div class="item-title">Физико-математическое моделирование</div>
-<div class="item-description">Интерактивные эксперименты, виртуальные лабораторные работы и веб-симуляторы по физике, электротехнике, электронике и смежным дисциплинам.</div>
-</div>
-<div class="separator"></div>
-<div class="item">
-<div class="item-title">Разработка образовательного ПО</div>
-<div class="item-subtitle">HTML5 · JavaScript · SVG · Python</div>
-<div class="item-description">Интерактивные визуализации, цифровые двойники учебно-лабораторного оборудования и электронные образовательные ресурсы.</div>
-</div>
-<div class="separator"></div>
-<div class="item">
-<div class="item-title">Образовательная методология</div>
-<div class="item-description">Проектирование лабораторных практикумов и учебных сценариев. Преподавание физики и информатики с 2015 года, высшая квалификационная категория.</div>
-</div></div>
 <!--<div class="section">
                     <h2 class="section-title">СЛУЖБА В АРМИИ</h2>
                     <div class="item">
@@ -680,21 +43,20 @@
                         </div>
                     </div>
                 </div>-->
-<div class="section">
-<h2 class="section-title">ТЕХНОЛОГИИ И ИНСТРУМЕНТЫ</h2>
-<ul class="skill-list"><li>HTML5 · CSS · JavaScript · SVG</li><li>Python · SCADA-интерфейсы</li><li>Математическое моделирование · вычислительные алгоритмы</li><li>LaTeX · XeLaTeX · MathJax</li><li>AutoCAD · электрические схемы · инженерная графика</li></ul></div>
-</div>
+<div class="section"><h2 class="section-title">СПЕЦИАЛИЗАЦИЯ</h2>
+<ul class="skill-list"><li>Интерактивные модели физических процессов</li><li>Виртуальные лаборатории для СПО и вузов</li><li>Электротехника, электроника, информатика</li><li>Электронные образовательные ресурсы</li><li>Методические пособия и практикумы</li><li>Научно-техническая вёрстка</li></ul></div><div class="section"><h2 class="section-title">ТЕХНОЛОГИИ</h2>
+<ul class="skill-list"><li>HTML5, JavaScript, CSS, SVG</li><li>Python, SCADA</li><li>LaTeX, XeLaTeX, MathJax</li><li>AutoCAD, инженерная графика</li></ul></div></div>
 <div class="right-column">
-<div class="section">
-<h2 class="section-title">ПРОФЕССИОНАЛЬНЫЙ ПРОФИЛЬ</h2>
-<div class="item-description">Разрабатываю виртуальные лаборатории и интерактивные учебные модели на стыке физики, математики, программирования и педагогики. Работаю с полным циклом: физическая модель и алгоритм → интерфейс эксперимента → проверка результатов → учебно-методический материал. Решения ориентированы на школы, колледжи, университеты и разработчиков учебного оборудования. Работающие модели и программные решения демонстрирую на профессиональной встрече.</div>
-</div><div class="section">
-<h2 class="section-title">ПРОФЕССИОНАЛЬНЫЙ ОПЫТ</h2>
-<div class="item">
-<div class="item-subtitle">Руководитель направления перспективных разработок · ИТЭК — Уфа</div>
-<div class="item-description">Разработка и развитие учебно-лабораторных стендов, инженерных симуляторов и цифровых двойников. Программирование SCADA-интерфейсов на Python; проектирование программной логики и методического сопровождения. Подготовка электрических схем, технической и эксплуатационной документации; координация задач разработки.</div>
-</div>
-</div><div class="section"><h2 class="section-title">ПРОФЕССИОНАЛЬНЫЕ КОМПЕТЕНЦИИ</h2><div class="item"><div class="item-title">Математическое и физическое моделирование</div><div class="item-description">Построение моделей механических, электромагнитных и электротехнических процессов; расчёт физических величин, параметризация, численные зависимости и проверка результатов.</div></div><div class="item"><div class="item-title">Виртуальные лаборатории и инженерные симуляторы</div><div class="item-description">Разработка интерактивного эксперимента: органы управления, измерительные приборы, индикация, графики, обработка результатов, учебные сценарии и обратная связь.</div></div><div class="item"><div class="item-title">Программирование и визуализация</div><div class="item-description">HTML5, JavaScript, CSS, SVG; Python для инженерных задач и SCADA-интерфейсов. Интерактивная графика, работа с событиями и адаптивные веб-интерфейсы.</div></div><div class="item"><div class="item-title">Электронные образовательные ресурсы</div><div class="item-description">Разработка интерактивных учебников, демонстраций, цифровых лабораторных практикумов и проверочных заданий. Авторская коллекция — порядка 200 интерактивных демонстраций по физике.</div></div><div class="item"><div class="item-title">Учебно-методическая и техническая документация</div><div class="item-description">Лабораторные работы, методические пособия, расчётные задания, схемы и руководства по эксплуатации. LaTeX/XeLaTeX, MathJax, векторная и инженерная графика.</div></div></div><div class="section">
+<div class="section section-intro" id="profile"><h2 class="section-title">ПРОФЕССИОНАЛЬНЫЙ ПРОФИЛЬ</h2>
+<p class="item-description">Разрабатываю интерактивные модели физических и инженерных процессов, виртуальные лаборатории и цифровые двойники учебного оборудования. Соединяю математическую постановку задачи, программирование, визуализацию и методику обучения. Работаю на стыке физики, электротехники и цифровых образовательных технологий.</p></div><div class="section"><h2 class="section-title">КЛЮЧЕВЫЕ НАПРАВЛЕНИЯ</h2>
+<div class="item"><div class="item-title">Физико-математическое моделирование</div><div class="item-description">Моделирование механических, тепловых, электромагнитных и электротехнических процессов; настройка параметров эксперимента, визуализация закономерностей, графиков и измеряемых величин.</div></div>
+<div class="item"><div class="item-title">Виртуальные лаборатории и цифровые двойники</div><div class="item-description">Интерактивные схемы и приборы, моделирование электрических цепей и машин, виртуальные измерения, лабораторные сценарии и цифровые аналоги физических стендов для СПО и высшего образования.</div></div>
+<div class="item"><div class="item-title">Электронные образовательные ресурсы</div><div class="item-description">Интерактивные учебники и демонстрации, учебные веб-приложения, задания и средства самопроверки. Создана библиотека порядка 200 учебных интерактивов по курсу физики; модели демонстрируются на собеседовании.</div></div>
+<div class="item"><div class="item-title">Методология и научно-техническая вёрстка</div><div class="item-description">Разработка лабораторных практикумов, методических пособий и расчётных заданий; оформление математических формул, схем, таблиц и научно-технических материалов в LaTeX и XeLaTeX.</div></div>
+</div><div class="section" id="experience"><h2 class="section-title">ПРОФЕССИОНАЛЬНЫЙ ОПЫТ</h2>
+<div class="item"><div class="item-title">Руководитель направления перспективных разработок</div><div class="item-subtitle">ИТЭК — Уфа · настоящее время</div><div class="item-description">Разработка и развитие учебно-лабораторного оборудования; инженерных симуляторов и цифровых двойников; программирование SCADA на Python. Координация технических разработок, подготовка электрических схем, эксплуатационной и учебно-методической документации.</div></div>
+<div class="item"><div class="item-title">Преподаватель физики и информатики</div><div class="item-subtitle">Педагогическая деятельность с 2015 года</div><div class="item-description">Преподавание физики и информатики, подготовка учащихся к олимпиадам, конференциям и исследовательским конкурсам, наставничество. Высшая квалификационная категория.</div></div>
+</div><div class="section" id="education">
 <h2 class="section-title">ОБРАЗОВАНИЕ</h2>
 <div class="item">
 <div class="item-title">ВЫСШЕЕ ОБРАЗОВАНИЕ</div>
@@ -704,9 +66,9 @@
                         </div>
 <!-- Галерея документов -->
 <div class="document-gallery">
-<div class="document-item" onclick="openModal('./img/dip1.jpg')">
+<div aria-label="Открыть документ" class="document-item" data-modal-src="./img/dip1.jpg" role="button" tabindex="0">
 <div class="document-preview">
-<img alt="Диплом МГУ" src="./img/dip1.jpg"/>
+<img alt="Диплом МГУ" decoding="async" loading="lazy" src="./img/dip1.jpg"/>
 </div>
 </div>
 </div>
@@ -719,9 +81,9 @@
                         </div>
 <!-- Галерея документов -->
 <div class="document-gallery">
-<div class="document-item" onclick="openModal('./img/dip2.jpg')">
+<div aria-label="Открыть документ" class="document-item" data-modal-src="./img/dip2.jpg" role="button" tabindex="0">
 <div class="document-preview">
-<img alt="Диплом БашГУ" src="./img/dip2.jpg"/>
+<img alt="Диплом БашГУ" decoding="async" loading="lazy" src="./img/dip2.jpg"/>
 </div>
 </div>
 </div>
@@ -735,9 +97,9 @@
                         </div>
 <!-- Галерея документов -->
 <div class="document-gallery">
-<div class="document-item" onclick="openModal('./img/dip3.jpg')">
+<div aria-label="Открыть документ" class="document-item" data-modal-src="./img/dip3.jpg" role="button" tabindex="0">
 <div class="document-preview">
-<img alt="Диплом переподготовки" src="./img/dip3.jpg"/>
+<img alt="Диплом переподготовки" decoding="async" loading="lazy" src="./img/dip3.jpg"/>
 </div>
 </div>
 </div>
@@ -750,9 +112,9 @@
                         </div>
 <!-- Галерея документов -->
 <div class="document-gallery">
-<div class="document-item" onclick="openModal('./img/dip4.jpg')">
+<div aria-label="Открыть документ" class="document-item" data-modal-src="./img/dip4.jpg" role="button" tabindex="0">
 <div class="document-preview">
-<img alt="Диплом БАС" src="./img/dip4.jpg"/>
+<img alt="Диплом БАС" decoding="async" loading="lazy" src="./img/dip4.jpg"/>
 </div>
 </div>
 </div>
@@ -766,72 +128,21 @@
                         </div>
 <!-- Галерея документов -->
 <div class="document-gallery">
-<div class="document-item" onclick="openModal('./img/dip5.jpg')">
+<div aria-label="Открыть документ" class="document-item" data-modal-src="./img/dip5.jpg" role="button" tabindex="0">
 <div class="document-preview">
-<img alt="Удостоверение" src="./img/dip5.jpg"/>
+<img alt="Удостоверение" decoding="async" loading="lazy" src="./img/dip5.jpg"/>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="section"><details class="portfolio-details"><summary aria-label="Открыть или свернуть: педагогические конкурсы" class="portfolio-summary"><h2 class="section-title">ПЕДАГОГИЧЕСКИЕ КОНКУРСЫ</h2></summary>
 
-                    Диплом II степени на региональном конкурсе педагогического мастерства Magister posterum / Учитель будущего 
-                            <br/><br/>
-<!-- Галерея документов репетиторства -->
-<div class="document-gallery">
-<div class="document-item" onclick="openModal('./img/magister.jpg')">
-<div class="document-preview">
-<img alt="Стобальница 2019" src="./img/magister.jpg"/>
-</div>
-</div>
-</div>
-</details></div>
-<div class="section"><details class="portfolio-details"><summary aria-label="Открыть или свернуть: наставничество" class="portfolio-summary"><h2 class="section-title">НАСТАВНИЧЕСТВО</h2></summary>
 
-<ul class="achievement-list">
-<li>Наставник магистранта МФТИ - ЗОЛОТОГО МЕДАЛИСТА Всероссийской олимпиады студентов «Я-профессионал»</li>
-</ul>
-<!-- Галерея документов общественных наград -->
-<div class="document-gallery">
-<div class="document-item" onclick="openModal('./img/linar1.PNG')">
-<div class="document-preview">
-<img alt="Почетная грамота" src="./img/linar1.PNG"/>
-</div>
-</div>
-<div class="document-item" onclick="openModal('./img/linar.PNG')">
-<div class="document-preview">
-<img alt="Диплом Отец года" src="./img/linar.PNG"/>
-</div>
-</div>
-<div class="document-item" onclick="openModal('./img/linar2.PNG')">
-<div class="document-preview">
-<img alt="Благодарность" src="./img/linar2.PNG"/>
-</div>
-</div>
-</div>
-</details></div>
-<div class="section"><details class="portfolio-details"><summary aria-label="Открыть или свернуть: индивидуальная подготовка" class="portfolio-summary"><h2 class="section-title">ИНДИВИДУАЛЬНАЯ ПОДГОТОВКА</h2></summary>
 
-                    100 баллов на ЕГЭ
-                            <br/><br/>
-<!-- Галерея документов репетиторства -->
-<div class="document-gallery">
-<div class="document-item" onclick="openModal('./img/katya.PNG')">
-<div class="document-preview">
-<img alt="Стобальница 2019" src="./img/katya.PNG"/>
-</div>
-</div>
-</div>
-<div class="item">
-<div class="item-description">
-<a href="https://www.bashinform.ru/news/social/2018-07-04/layfhak-stoballnits-iz-bashkirii-kak-my-sdali-ege-po-fizike-na-100-ballov-2157992" target="_blank">Ссылка на статью о достижении</a>
-</div>
-</div>
-</details></div>
-<div class="section"><details class="portfolio-details"><summary aria-label="Открыть или свернуть: достижения учащихся" class="portfolio-summary"><h2 class="section-title">ДОСТИЖЕНИЯ УЧАЩИХСЯ</h2></summary>
+<div class="section" id="achievements">
+<h2 class="section-title">ДОСТИЖЕНИЯ УЧЕНИКОВ</h2>
 
-<table class="achievements-table">
+<p class="achievements-lead">Результаты учеников и участников исследовательских проектов — одно из подтверждений эффективности методической работы.</p><details class="achievements-disclosure" id="achievements-list"><summary><span aria-hidden="true" class="summary-icon">↘</span><span class="summary-content"><strong>Олимпиады, научные конференции и конкурсы</strong><small>Подтверждённые результаты учащихся, 2016–2020 · 15 записей</small></span><span class="summary-action">Показать документы <span aria-hidden="true">+</span></span></summary><div class="disclosure-body"><table class="achievements-table">
 <thead>
 <tr>
 <th>Достижение</th>
@@ -844,7 +155,7 @@
 <td>Призер XXIV Научно-практической конференции школьников «Познание и творчество»</td>
 <td>2020 г., Уфа</td>
 <td>
-<div class="document-item" onclick="openModal('./img/egorka.jpeg')">
+<div aria-label="Открыть документ" class="document-item" data-modal-src="./img/egorka.jpeg" role="button" tabindex="0">
 <div class="document-preview">
 <img alt="Призер конференции" src="./img/egorka.jpeg"/>
 </div>
@@ -855,7 +166,7 @@
 <td>Победитель Республиканского этапа Всероссийской олимпиады учебно-исследовательских проектов детей и молодежи «Созвездие — 2020»</td>
 <td>2019 г., Уфа</td>
 <td>
-<div class="document-item" onclick="openModal('./img/lev1_1.PNG')">
+<div aria-label="Открыть документ" class="document-item" data-modal-src="./img/lev1_1.PNG" role="button" tabindex="0">
 <div class="document-preview">
 <img alt="Победитель Созвездие" src="./img/lev1.PNG"/>
 </div>
@@ -866,7 +177,7 @@
 <td>Победители  Научно-практической конференции школьников «Завтра начинается сегодня» в номинации «Физика», Орджоникидзевского района г. Уфа</td>
 <td>2019 г., Уфа</td>
 <td>
-<div class="document-item" onclick="openModal('./img/ilia_artur.PNG')">
+<div aria-label="Открыть документ" class="document-item" data-modal-src="./img/ilia_artur.PNG" role="button" tabindex="0">
 <div class="document-preview">
 <img alt="Победитель физика" src="./img/ilia_artur.PNG"/>
 </div>
@@ -877,7 +188,7 @@
 <td>Победитель  Научно-практической конференции школьников «Завтра начинается сегодня» в номинации «Наука и техника», Орджоникидзевского района г. Уфа</td>
 <td>2019 г., Уфа</td>
 <td>
-<div class="document-item" onclick="openModal('./img/lev3.PNG')">
+<div aria-label="Открыть документ" class="document-item" data-modal-src="./img/lev3.PNG" role="button" tabindex="0">
 <div class="document-preview">
 <img alt="Победитель наука и техника" src="./img/lev3.PNG"/>
 </div>
@@ -888,7 +199,7 @@
 <td>Призер  Научно-практической конференции школьников «Завтра начинается сегодня» в номинации «Наука и техника», Орджоникидзевского района г. Уфа</td>
 <td>2019 г., Уфа</td>
 <td>
-<div class="document-item" onclick="openModal('./img/kamilla.PNG')">
+<div aria-label="Открыть документ" class="document-item" data-modal-src="./img/kamilla.PNG" role="button" tabindex="0">
 <div class="document-preview">
 <img alt="Призер физика" src="./img/kamilla.PNG"/>
 </div>
@@ -913,7 +224,7 @@
 <td>Победитель международной конференции молодых ученых «Актуальные проблемы науки и техники» УГНТУ</td>
 <td>2018-2019 гг., Уфа</td>
 <td>
-<div class="document-item" onclick="openModal('./img/6.linar_ugntu.jpg')">
+<div aria-label="Открыть документ" class="document-item" data-modal-src="./img/6.linar_ugntu.jpg" role="button" tabindex="0">
 <div class="document-preview">
 <img alt="Победители УГНТУ" src="./img/6.linar_ugntu.jpg"/>
 </div>
@@ -924,7 +235,7 @@
 <td>Призер международной конференции молодых ученых «Актуальные проблемы науки и техники» УГНТУ</td>
 <td>2018-2019 гг., Уфа</td>
 <td>
-<div class="document-item" onclick="openModal('./img/angelina.jpg')">
+<div aria-label="Открыть документ" class="document-item" data-modal-src="./img/angelina.jpg" role="button" tabindex="0">
 <div class="document-preview">
 <img alt="Победители УГНТУ" src="./img/angelina.jpg"/>
 </div>
@@ -935,7 +246,7 @@
 <td>Призер Научно-практической конференции школьников «Интеллект будущего»</td>
 <td>2019 г., Белебей</td>
 <td>
-<div class="document-item" onclick="openModal('./img/kasim.jpg')">
+<div aria-label="Открыть документ" class="document-item" data-modal-src="./img/kasim.jpg" role="button" tabindex="0">
 <div class="document-preview">
 <img alt="Призер Интеллект будущего" src="./img/kasim.jpg"/>
 </div>
@@ -953,7 +264,7 @@
 <td>Призер республиканского конкурса работ по информационным технологиям «КРИТ-2018»</td>
 <td>2018 г., Уфа</td>
 <td>
-<div class="document-item" onclick="openModal('./img/krit.jpg')">
+<div aria-label="Открыть документ" class="document-item" data-modal-src="./img/krit.jpg" role="button" tabindex="0">
 <div class="document-preview">
 <img alt="Призер КРИТ-2018" src="./img/krit.jpg"/>
 </div>
@@ -964,7 +275,7 @@
 <td>Два призера Конкурса научных и творческих проектов по физике СФ БашГУ</td>
 <td>2018 г., Стерлитамак</td>
 <td>
-<div class="document-item" onclick="openModal('./img/sterlik.jpg')">
+<div aria-label="Открыть документ" class="document-item" data-modal-src="./img/sterlik.jpg" role="button" tabindex="0">
 <div class="document-preview">
 <img alt="Призеры физика БашГУ" src="./img/sterlik.jpg"/>
 </div>
@@ -975,7 +286,7 @@
 <td>Победители и призеры муниципальных этапов Кубка имени Ю.А. Гагарина</td>
 <td>2018 г., Белебей</td>
 <td>
-<div class="document-item" onclick="openModal('./img/gagarin.jpg')">
+<div aria-label="Открыть документ" class="document-item" data-modal-src="./img/gagarin.jpg" role="button" tabindex="0">
 <div class="document-preview">
 <img alt="Призер Гагарин" src="./img/gagarin.jpg"/>
 </div>
@@ -986,7 +297,7 @@
 <td>Призер муниципального этапа Всероссийской олимпиады школьников по информатике</td>
 <td>2016 г., Белебей</td>
 <td>
-<div class="document-item" onclick="openModal('./img/holkin.jpg')">
+<div aria-label="Открыть документ" class="document-item" data-modal-src="./img/holkin.jpg" role="button" tabindex="0">
 <div class="document-preview">
 <img alt="Призер информатика" src="./img/holkin.jpg"/>
 </div>
@@ -994,99 +305,121 @@
 </td>
 </tr>
 </tbody>
-</table>
-</details></div>
-<div class="section"><details class="portfolio-details"><summary aria-label="Открыть или свернуть: награды и благодарности" class="portfolio-summary"><h2 class="section-title">НАГРАДЫ И БЛАГОДАРНОСТИ</h2></summary>
+</table></div></details></div>
+<div class="section supplementary-section"><h2 class="section-title">Общественные награды</h2><details class="secondary-disclosure"><summary>Сведения и подтверждающие документы</summary>
 
 <ul class="achievement-list">
-<li>Диплом лауреата общественной награды «Отцовская доблесть» — звание «Отец года»</li>
-<li>Почётная грамота главы муниципального района за заслуги в области просвещения</li>
+<li>Диплом лауреата общественной награды «Отцовская доблесть» - звание «Отец года»</li>
+<li>Почетная грамота главы муниципального района за заслуги в области просвещения</li>
 <li>Благодарность Управления образования за подготовку конкурсанта на звание «Учитель года Республики Башкортостан»</li>
 </ul>
 <!-- Галерея документов общественных наград -->
 <div class="document-gallery">
-<div class="document-item" onclick="openModal('./img/dip6.jpg')">
+<div aria-label="Открыть документ" class="document-item" data-modal-src="./img/dip6.jpg" role="button" tabindex="0">
 <div class="document-preview">
-<img alt="Диплом Отец года" src="./img/dip6.jpg"/>
+<img alt="Диплом Отец года" decoding="async" loading="lazy" src="./img/dip6.jpg"/>
 </div>
 </div>
-<div class="document-item" onclick="openModal('./img/IMG_20230505_165233.jpg')">
+<div aria-label="Открыть документ" class="document-item" data-modal-src="./img/IMG_20230505_165233.jpg" role="button" tabindex="0">
 <div class="document-preview">
-<img alt="Почетная грамота" src="./img/IMG_20230505_165233.jpg"/>
+<img alt="Почетная грамота" decoding="async" loading="lazy" src="./img/IMG_20230505_165233.jpg"/>
 </div>
 </div>
-<div class="document-item" onclick="openModal('./img/mku.jpg')">
+<div aria-label="Открыть документ" class="document-item" data-modal-src="./img/mku.jpg" role="button" tabindex="0">
 <div class="document-preview">
-<img alt="Благодарность" src="./img/mku.jpg"/>
+<img alt="Благодарность" decoding="async" loading="lazy" src="./img/mku.jpg"/>
 </div>
 </div>
 </div>
 </details></div>
-<div class="section"><details class="portfolio-details"><summary aria-label="Открыть или свернуть: общественная деятельность" class="portfolio-summary"><h2 class="section-title">ОБЩЕСТВЕННАЯ ДЕЯТЕЛЬНОСТЬ</h2></summary>
+<div class="section supplementary-section"><h2 class="section-title">Волонтёрская деятельность</h2><details class="secondary-disclosure"><summary>Сведения и подтверждающие документы</summary>
 
 <div class="item-description">
                         Активное участие в волонтерских проектах и общественной деятельности
                     </div>
 <!-- Галерея документов волонтерской деятельности -->
 <div class="document-gallery">
-<div class="document-item" onclick="openModal('./img/vol.jpg')">
+<div aria-label="Открыть документ" class="document-item" data-modal-src="./img/vol.jpg" role="button" tabindex="0">
 <div class="document-preview">
-<img alt="Волонтерская деятельность" src="./img/vol.jpg"/>
+<img alt="Волонтерская деятельность" decoding="async" loading="lazy" src="./img/vol.jpg"/>
 </div>
 </div>
-<div class="document-item" onclick="openModal('./img/vol2.jpg')">
+<div aria-label="Открыть документ" class="document-item" data-modal-src="./img/vol2.jpg" role="button" tabindex="0">
 <div class="document-preview">
-<img alt="Волонтерская деятельность" src="./img/vol2.jpg"/>
+<img alt="Волонтерская деятельность" decoding="async" loading="lazy" src="./img/vol2.jpg"/>
 </div>
 </div>
 </div>
 </details></div>
+<div class="section supplementary-section"><h2 class="section-title">Педагогическое мастерство</h2><details class="secondary-disclosure"><summary>Сведения и подтверждающие документы</summary>
+
+                    Диплом II степени на региональном конкурсе педагогического мастерства Magister posterum / Учитель будущего 
+                            <br/><br/>
+<!-- Галерея документов репетиторства -->
+<div class="document-gallery">
+<div aria-label="Открыть документ" class="document-item" data-modal-src="./img/magister.jpg" role="button" tabindex="0">
+<div class="document-preview">
+<img alt="Стобальница 2019" decoding="async" loading="lazy" src="./img/magister.jpg"/>
 </div>
+</div>
+</div>
+</details></div><div class="section supplementary-section"><h2 class="section-title">Наставничество</h2><details class="secondary-disclosure"><summary>Сведения и подтверждающие документы</summary>
+
+<ul class="achievement-list">
+<li>Наставник магистранта МФТИ - ЗОЛОТОГО МЕДАЛИСТА Всероссийской олимпиады студентов «Я-профессионал» </li>
+</ul>
+<!-- Галерея документов общественных наград -->
+<div class="document-gallery">
+<div aria-label="Открыть документ" class="document-item" data-modal-src="./img/linar1.PNG" role="button" tabindex="0">
+<div class="document-preview">
+<img alt="Почетная грамота" decoding="async" loading="lazy" src="./img/linar1.PNG"/>
+</div>
+</div>
+<div aria-label="Открыть документ" class="document-item" data-modal-src="./img/linar.PNG" role="button" tabindex="0">
+<div class="document-preview">
+<img alt="Диплом Отец года" decoding="async" loading="lazy" src="./img/linar.PNG"/>
+</div>
+</div>
+<div aria-label="Открыть документ" class="document-item" data-modal-src="./img/linar2.PNG" role="button" tabindex="0">
+<div class="document-preview">
+<img alt="Благодарность" decoding="async" loading="lazy" src="./img/linar2.PNG"/>
+</div>
+</div>
+</div>
+</details></div><div class="section supplementary-section"><h2 class="section-title">Индивидуальная подготовка</h2><details class="secondary-disclosure"><summary>Сведения и подтверждающие документы</summary>
+
+                    100 баллов на ЕГЭ
+                            <br/><br/>
+<!-- Галерея документов репетиторства -->
+<div class="document-gallery">
+<div aria-label="Открыть документ" class="document-item" data-modal-src="./img/katya.PNG" role="button" tabindex="0">
+<div class="document-preview">
+<img alt="Стобальница 2019" decoding="async" loading="lazy" src="./img/katya.PNG"/>
+</div>
+</div>
+</div>
+<div class="item">
+<div class="item-description">
+<a href="https://www.bashinform.ru/news/social/2018-07-04/layfhak-stoballnits-iz-bashkirii-kak-my-sdali-ege-po-fizike-na-100-ballov-2157992" target="_blank">Ссылка на статью о достижении</a>
+</div>
+</div>
+</details></div></div>
 </section>
 <!-- Подпись -->
 <div class="signature">
-<div>Дата обновления: 06.11.2026</div>
+<div>Обновлено: ноябрь 2026 года</div>
 <div class="signature-line"></div>
 <div>Басантаев Р. Н.</div>
 </div>
 <!-- Модальное окно для просмотра документов -->
-<footer>
-<button class="print-button" onclick="window.print()">
-<i class="fas fa-print"></i> Печать портфолио
-            </button>
+<div aria-hidden="true" aria-label="Просмотр документа" aria-modal="true" class="modal" id="documentModal" role="dialog">
+<div class="modal-content">
+<button aria-label="Закрыть документ" class="close-modal" type="button">×</button>
+<img alt="Увеличенный документ" class="modal-image" id="modalImage" src=""/>
+</div>
+</div><footer>
+<button class="print-button">Версия для печати</button>
 </footer>
 </div>
-<script>
-(() => {
-  const modal = document.getElementById('documentModal');
-  const modalImage = document.getElementById('modalImage');
-  let previousFocus = null;
-  window.openModal = function(src) {
-    previousFocus = document.activeElement;
-    modalImage.src = src;
-    modal.style.display = 'flex';
-    modal.setAttribute('aria-hidden','false');
-    document.body.style.overflow = 'hidden';
-    modal.querySelector('.close-modal').focus();
-  };
-  window.closeModal = function() {
-    modal.style.display = 'none';
-    modal.setAttribute('aria-hidden','true');
-    modalImage.removeAttribute('src');
-    document.body.style.overflow = '';
-    if (previousFocus && previousFocus.focus) previousFocus.focus();
-  };
-  modal.addEventListener('click', e => { if (e.target === modal) window.closeModal(); });
-  document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal.style.display === 'flex') window.closeModal(); });
-  document.querySelectorAll('.document-item[onclick]').forEach(node => {
-    node.setAttribute('role','button'); node.setAttribute('tabindex','0');
-    node.setAttribute('aria-label','Увеличить документ');
-    node.addEventListener('keydown',e => { if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); node.click(); } });
-  });
-  // In print, show details' content without mutating their on-screen state.
-  window.addEventListener('beforeprint', () => document.querySelectorAll('details.portfolio-details').forEach(d => { d.dataset.wasOpen = d.open ? 'yes':'no'; d.open = true; }));
-  window.addEventListener('afterprint', () => document.querySelectorAll('details.portfolio-details').forEach(d => { if(d.dataset.wasOpen === 'no') d.open = false; delete d.dataset.wasOpen; }));
-})();
-</script>
-<div aria-hidden="true" aria-label="Просмотр документа" aria-modal="true" class="modal" id="documentModal" role="dialog"><div class="modal-content"><button aria-label="Закрыть документ" class="close-modal" onclick="closeModal()" type="button">×</button><img alt="Увеличенный документ" class="modal-image" id="modalImage"/></div></div></body>
+<script defer="" src="./js/main.js"></script></body>
 </html>
