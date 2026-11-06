@@ -599,3 +599,22 @@
 .close-modal { z-index: 2; }
 .close-modal:focus-visible { outline: 2px solid white; outline-offset: 2px; }
 @media print { .modal { display: none !important; } .print-button { display: none !important; } }
+
+/* Фирменный научный мотив. Исходные шрифты и двухколоночный макет не изменяются. */
+.science-banner{position:relative;max-width:810px;height:153px;margin:29px auto -10px;overflow:hidden;border-top:1px solid #e1e6e9;border-bottom:1px solid #e1e6e9;background:linear-gradient(105deg,#fafbf9,#f1f5f5 52%,#fafbf9)}
+.science-banner__caption{position:absolute;top:13px;left:0;right:0;color:#617486;font:500 10px/1.45 'IBM Plex Mono','Courier New',monospace;letter-spacing:.10em;z-index:2}
+.science-banner__caption span{padding:0 13px;color:#9aa6ae}
+.science-banner__graphic{width:100%;height:125px;margin-top:24px;display:block}
+.science-banner .orbit{fill:none;stroke:#617f93;stroke-width:1.35;opacity:.8;transform-box:fill-box;transform-origin:center;animation:scientificOrbit 18s linear infinite}
+.science-banner .orbit-b{animation-direction:reverse;animation-duration:24s}
+.science-banner .orbit-c{animation-duration:30s}
+.science-banner .pulse-ring{transform-box:fill-box;transform-origin:center;animation:scientificPulse 2.9s ease-in-out infinite}
+.science-banner .data-point{fill:#587d94;animation:scientificPulse 3.4s ease-in-out infinite}
+@keyframes scientificOrbit{to{rotate:360deg}}
+@keyframes scientificPulse{50%{opacity:.30;scale:1.25}}
+.section-intro .item-description{font-size:1.04rem;line-height:1.7}
+.right-column .item{margin-bottom:23px}
+@media(max-width:768px){.science-banner{margin:26px auto 0;height:125px}.science-banner__caption{font-size:8px;letter-spacing:0}.science-banner__graphic{height:112px}.science-banner__caption span{padding:0 6px}}
+@media(max-width:480px){.science-banner__caption{font-size:7px}.science-banner__caption span{padding:0 2px}.science-banner{height:116px}}
+@media(prefers-reduced-motion:reduce){.science-banner *{animation:none!important}}
+@media print{.science-banner{display:none}.modal,.print-button{display:none!important}.resume-container{box-shadow:none;border-top:0}body{background:#fff;padding:0}.section{break-inside:avoid}}
