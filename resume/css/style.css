@@ -659,3 +659,105 @@ body:before{opacity:.12}
 @media(max-width:480px){.resume-container{padding:0 15px 20px}.hero-nav{gap:10px}.hero-nav a{font-size:10px}.hero-copy .name{font-size:43px}.hero-profession{font-size:20px}.hero-description{font-size:14px}.hero-aside{display:block}.hero-photo{height:185px;margin-bottom:11px}.hero-diagram{max-width:100%}.hero-bottomline{grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.hero-bottomline strong{font-size:12px}.hero-bottomline span{font-size:10px}.left-column{grid-template-columns:1fr}.summary-action{display:none}.achievements-disclosure>summary{padding:14px;gap:9px}.summary-content strong{font-size:13px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero-diagram animateMotion{display:none}.diagram-curve,.hero-main-link,.document-item{animation:none!important;transition:none!important}}
 @media print{body{padding:0!important;background:#fff}.resume-container{padding:0 20px!important;max-width:none}.hero-diagram{display:none}.hero-layout{grid-template-columns:1fr 130px;padding:12px 0}.hero-photo{height:115px}.hero-topline,.hero-actions{display:none}.hero-copy .name{font-size:32px}.hero-description{font-size:11px}.hero-bottomline{padding:12px 0}.content{display:flex!important}.left-column{flex:0 0 29%;border-right:1px solid #ddd;padding-right:20px}.right-column{padding-left:22px}.achievements-disclosure:not([open]) .disclosure-body,.secondary-disclosure:not([open])>:not(summary){display:none}.print-button{display:none!important}}
+
+/* Редакция 3: читаемая типографика для экранного портфолио.
+   Увеличена вся информационная иерархия, не только основной текст. */
+@media screen {
+  body { font-size: 17px; }
+  .resume-container { max-width: 1200px; }
+  .hero-index, .hero-nav a, .hero-patronymic { font-size: 13px; }
+  .hero-kicker { font-size: 12px; }
+  .hero-profession { font-size: 26px; }
+  .hero-description { font-size: 18px; line-height: 1.72; }
+  .hero-main-link { font-size: 13px; }
+  .hero-interview-note { font-size: 14px; }
+  .diagram-label { font-size: 11px; }
+  .hero-bottomline strong { font-size: 17px; }
+  .hero-bottomline span { font-size: 13px; }
+  .section-title { font-size: 16px; line-height: 1.5; }
+  .item-title { font-size: 19px; }
+  .item-description { font-size: 17px; line-height: 1.76; }
+  .item-subtitle { font-size: 15px; }
+  #profile > .item-description { font-size: 18px; }
+  .left-column .contact-info li { font-size: 15px; line-height: 1.55; }
+  .skill-list li { font-size: 15.5px; line-height: 1.65; }
+  .achievements-lead { font-size: 16px; }
+  .summary-content strong { font-size: 18px; }
+  .summary-content small { font-size: 14px; }
+  .summary-action { font-size: 12px; }
+  .achievements-table { font-size: 14px; }
+  .achievements-table th { font-size: 13px; }
+  .achievements-table td { padding: 12px 10px; line-height: 1.55; }
+  .supplementary-section .section-title { font-size: 15px; }
+  .secondary-disclosure, .secondary-disclosure > summary { font-size: 15px; }
+  .signature { font-size: 14px; }
+  .print-button { font-size: 13px !important; }
+}
+@media screen and (max-width: 700px) {
+  .hero-description { font-size: 17px; }
+  .item-description { font-size: 16.5px; }
+  .skill-list li { font-size: 15.5px; }
+  .hero-bottomline strong { font-size: 15px; }
+  .hero-bottomline span { font-size: 12px; }
+}
+@media screen and (max-width: 480px) {
+  .hero-nav a { font-size: 12px; }
+  .hero-profession { font-size: 23px; }
+  .hero-description { font-size: 17px; }
+  .hero-bottomline { gap: 10px; }
+  .hero-bottomline strong { font-size: 14px; }
+  .hero-bottomline span { font-size: 11.5px; }
+  .summary-content strong { font-size: 16.5px; }
+  .summary-content small { font-size: 13.5px; }
+}
+
+
+/* Точечное исправление: все раскрывающиеся разделы оформлены единообразно.
+   Остальные цвета, размеры, сетка и оформление возвращены к версии до «Академического премиума». */
+@media screen {
+  .secondary-disclosure {
+    border: 1px solid #d6e0e3;
+    background: #f8faf9;
+    border-radius: 3px;
+    overflow: hidden;
+    margin-top: 12px;
+  }
+  .secondary-disclosure > summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 19px 20px;
+    margin: 0;
+    color: #294757;
+    background: #f3f7f7;
+    font: 700 18px/1.45 'Libre Caslon Text', Georgia, serif;
+    list-style: none;
+    cursor: pointer;
+    transition: background .2s ease;
+  }
+  .secondary-disclosure > summary:hover { background: #ebf1f2; }
+  .secondary-disclosure > summary::after {
+    content: '+';
+    display: inline-grid;
+    place-items: center;
+    flex: 0 0 34px;
+    width: 34px;
+    height: 34px;
+    border: 1px solid #c7d6da;
+    color: #54798a;
+    font: 400 22px/1 'IBM Plex Mono', monospace;
+  }
+  .secondary-disclosure[open] > summary {
+    border-bottom: 1px solid #d6e0e3;
+    margin: 0;
+  }
+  .secondary-disclosure[open] > summary::after { content: '−'; }
+  .secondary-disclosure > :not(summary) { margin-left: 20px; margin-right: 20px; }
+  .secondary-disclosure > :last-child { margin-bottom: 20px; }
+  .secondary-disclosure .document-gallery { margin-top: 18px; }
+}
+@media screen and (max-width:480px) {
+  .secondary-disclosure > summary { padding: 14px; font-size: 16.5px; }
+  .secondary-disclosure > :not(summary) { margin-left: 14px; margin-right: 14px; }
+}
