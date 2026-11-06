@@ -1,0 +1,913 @@
+
+        /* Шрифты */
+        @import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #f5f5f0;
+            color: #1a1a1a;
+            line-height: 1.5;
+            font-family: 'Libre Caslon Text', 'Times New Roman', Times, serif;
+            font-size: 16px;
+            padding: 30px;
+            position: relative;
+        }
+        
+        /* Эффект бумаги */
+        body:before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(0,0,0,0.05)" stroke-width="0.5"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+            z-index: -1;
+            pointer-events: none;
+        }
+        
+        .resume-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border: 1px solid #cccccc;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            position: relative;
+            padding: 40px 50px;
+            border-top: 8px solid #2c3e50;
+        }
+        
+        /* Секция с фото */
+        .photo-section {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #2c3e50;
+        }
+        
+        .photo-frame {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            border: 4px solid #333333;
+            margin: 0 auto 25px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+        
+        .photo-frame:before {
+            content: "";
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            right: 5px;
+            bottom: 5px;
+            border: 2px solid #ffffff;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(30%);
+        }
+        
+        .name-title {
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+        
+        .name {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #1a1a1a;
+            font-family: 'Libre Caslon Text', 'Times New Roman', Times, serif;
+        }
+        
+        .title {
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: #333333;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+            padding: 0 20px;
+        }
+        
+        /* Основной контент */
+        .content {
+            display: flex;
+            position: relative;
+            margin-top: 20px;
+        }
+        
+        /* Левая колонка */
+        .left-column {
+            flex: 1;
+            padding-right: 50px;
+            border-right: 2px solid #cccccc;
+            text-align: right;
+        }
+        
+        /* Правая колонка */
+        .right-column {
+            flex: 2;
+            padding-left: 50px;
+        }
+        
+        /* Секции */
+        .section {
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .section-title {
+            font-size: 1.4rem;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: 'IBM Plex Mono', 'Courier New', monospace;
+        }
+        
+        .left-column .section-title {
+            text-align: right;
+        }
+        
+        .right-column .section-title {
+            text-align: left;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            height: 3px;
+            background-color: #2c3e50;
+        }
+        
+        .left-column .section-title:after {
+            right: 0;
+            width: 80px;
+        }
+        
+        .right-column .section-title:after {
+            left: 0;
+            width: 80px;
+        }
+        
+        /* Элементы в секциях */
+        .item {
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .item-title {
+            font-weight: 700;
+            font-size: 1.15rem;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+        
+        .item-subtitle {
+            color: #555555;
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+        
+        .item-date {
+            color: #2c3e50;
+            font-size: 0.95rem;
+            font-weight: 500;
+            margin-bottom: 12px;
+            font-family: 'IBM Plex Mono', 'Courier New', monospace;
+        }
+        
+        .item-description {
+            color: #333333;
+            line-height: 1.6;
+        }
+        
+        /* Контактная информация */
+        .contact-info {
+            list-style: none;
+        }
+        
+        .contact-info li {
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            font-family: 'IBM Plex Mono', 'Courier New', monospace;
+            font-size: 0.95rem;
+        }
+        
+        .left-column .contact-info li {
+            flex-direction: row-reverse;
+        }
+        
+        .contact-info i {
+            color: #2c3e50;
+            margin-left: 12px;
+            font-size: 1.1rem;
+            width: 24px;
+            text-align: center;
+        }
+        
+        .left-column .contact-info i {
+            margin-left: 0;
+            margin-right: 12px;
+        }
+        
+        /* Навыки */
+        .skill-list {
+            list-style: none;
+        }
+        
+        .skill-list li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-right: 10px;
+        }
+        
+        .skill-list li:before {
+            content: "▪";
+            position: absolute;
+            right: -15px;
+            color: #2c3e50;
+        }
+        
+        /* Достижения и награды */
+        .achievement-list {
+            list-style: none;
+            counter-reset: achievement-counter;
+            padding-left: 0;
+        }
+        
+        .achievement-list li {
+            margin-bottom: 18px;
+            position: relative;
+            padding-left: 35px;
+            padding-right: 10px;
+            counter-increment: achievement-counter;
+        }
+        
+        .achievement-list li:before {
+            content: counter(achievement-counter) ".";
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-weight: 700;
+            color: #2c3e50;
+            font-family: 'IBM Plex Mono', 'Courier New', monospace;
+            font-size: 1rem;
+        }
+        
+        /* Галерея документов */
+        .document-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .document-item {
+            width: 140px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s;
+            border: 1px solid #cccccc;
+            padding: 8px;
+            background-color: #f9f9f9;
+        }
+        
+        .document-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .document-preview {
+            width: 100%;
+            height: 180px;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 8px;
+            overflow: hidden;
+            border: 1px solid #dddddd;
+        }
+        
+        .document-preview img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        
+        .document-name {
+            font-size: 0.85rem;
+            color: #555555;
+            font-family: 'IBM Plex Mono', 'Courier New', monospace;
+            line-height: 1.3;
+        }
+        
+        /* Таблица достижений учеников */
+        .achievements-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            font-family: 'IBM Plex Mono', 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+        
+        .achievements-table th {
+            background-color: #f0f0f0;
+            border: 1px solid #cccccc;
+            padding: 12px 15px;
+            text-align: left;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+        
+        .achievements-table td {
+            border: 1px solid #cccccc;
+            padding: 12px 15px;
+            vertical-align: top;
+        }
+        
+        .achievements-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .achievements-table tr:hover {
+            background-color: #f0f0f0;
+        }
+        
+        /* Модальное окно для документов */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            background-color: #ffffff;
+            border-radius: 0;
+            overflow: hidden;
+            position: relative;
+            border: 2px solid #2c3e50;
+        }
+        
+        .modal-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background-color: rgba(44, 62, 80, 0.8);
+            color: white;
+            border: none;
+            width: 30px;
+            height: 30px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'IBM Plex Mono', 'Courier New', monospace;
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 992px) {
+            .content {
+                padding: 0 10px;
+            }
+            
+            .left-column {
+                padding-right: 30px;
+            }
+            
+            .right-column {
+                padding-left: 30px;
+            }
+            
+            .resume-container {
+                padding: 30px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+            }
+            
+            .left-column {
+                padding-right: 0;
+                padding-bottom: 30px;
+                border-right: none;
+                border-bottom: 2px solid #cccccc;
+                text-align: left;
+            }
+            
+            .right-column {
+                padding-left: 0;
+                padding-top: 30px;
+            }
+            
+            .left-column .section-title {
+                text-align: left;
+            }
+            
+            .left-column .section-title:after {
+                left: 0;
+                right: auto;
+            }
+            
+            .contact-info li {
+                justify-content: flex-start;
+            }
+            
+            .left-column .contact-info li {
+                flex-direction: row;
+            }
+            
+            .left-column .contact-info i {
+                margin-right: 12px;
+                margin-left: 0;
+            }
+            
+            .skill-list li:before {
+                left: -15px;
+                right: auto;
+            }
+            
+            .name {
+                font-size: 1.8rem;
+            }
+            
+            .document-item {
+                width: 120px;
+            }
+            
+            body {
+                padding: 15px;
+            }
+            
+            .achievements-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .photo-section {
+                margin-bottom: 30px;
+            }
+            
+            .photo-frame {
+                width: 140px;
+                height: 140px;
+            }
+            
+            .name {
+                font-size: 1.6rem;
+            }
+            
+            .title {
+                font-size: 1.1rem;
+            }
+            
+            .resume-container {
+                padding: 25px 20px;
+            }
+            
+            .section-title {
+                font-size: 1.2rem;
+            }
+            
+            .document-item {
+                width: 100px;
+            }
+            
+            .document-preview {
+                height: 140px;
+            }
+        }
+        
+        /* Футер */
+        footer {
+            margin-top: 50px;
+            padding-top: 25px;
+            border-top: 2px solid #2c3e50;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #666666;
+            font-family: 'IBM Plex Mono', 'Courier New', monospace;
+        }
+        
+        .print-button {
+            display: inline-block;
+            background-color: #2c3e50;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 15px;
+            font-family: 'IBM Plex Mono', 'Courier New', monospace;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        
+        .print-button:hover {
+            background-color: #1a2530;
+        }
+        
+        /* Разделители */
+        .separator {
+            height: 1px;
+            background-color: #cccccc;
+            margin: 25px 0;
+            width: 100%;
+        }
+        
+        /* Подпись */
+        .signature {
+            margin-top: 40px;
+            text-align: right;
+            font-family: 'IBM Plex Mono', 'Courier New', monospace;
+            font-size: 0.9rem;
+            color: #333333;
+            position: relative;
+            padding-top: 40px;
+        }
+        
+        .signature-line {
+            width: 200px;
+            height: 1px;
+            background-color: #333333;
+            margin: 10px 0 5px auto;
+        }
+        
+        /* Ссылки */
+        a {
+            color: #2c3e50;
+            text-decoration: none;
+            border-bottom: 1px dashed #2c3e50;
+        }
+        
+        a:hover {
+            border-bottom: 1px solid #2c3e50;
+        }
+    
+/* Длинный профессиональный заголовок без изменения структуры макета */
+.name-title .title { max-width: 760px; line-height: 1.45; }
+
+/* Функциональные дополнения для просмотрщика документов. Исходные шрифты и цвета сохранены. */
+.document-item[role="button"]:focus-visible { outline: 2px solid #2c3e50; outline-offset: 3px; }
+.modal[aria-hidden="false"] { display: flex; }
+.modal-content { max-width: min(95vw, 1100px); max-height: 92vh; }
+.modal-image { max-height: 85vh; width: auto; max-width: 100%; object-fit: contain; }
+.close-modal { z-index: 2; }
+.close-modal:focus-visible { outline: 2px solid white; outline-offset: 2px; }
+@media print { .modal { display: none !important; } .print-button { display: none !important; } }
+
+/* Фирменный научный мотив. Исходные шрифты и двухколоночный макет не изменяются. */
+.science-banner{position:relative;max-width:810px;height:153px;margin:29px auto -10px;overflow:hidden;border-top:1px solid #e1e6e9;border-bottom:1px solid #e1e6e9;background:linear-gradient(105deg,#fafbf9,#f1f5f5 52%,#fafbf9)}
+.science-banner__caption{position:absolute;top:13px;left:0;right:0;color:#617486;font:500 10px/1.45 'IBM Plex Mono','Courier New',monospace;letter-spacing:.10em;z-index:2}
+.science-banner__caption span{padding:0 13px;color:#9aa6ae}
+.science-banner__graphic{width:100%;height:125px;margin-top:24px;display:block}
+.science-banner .orbit{fill:none;stroke:#617f93;stroke-width:1.35;opacity:.8;transform-box:fill-box;transform-origin:center;animation:scientificOrbit 18s linear infinite}
+.science-banner .orbit-b{animation-direction:reverse;animation-duration:24s}
+.science-banner .orbit-c{animation-duration:30s}
+.science-banner .pulse-ring{transform-box:fill-box;transform-origin:center;animation:scientificPulse 2.9s ease-in-out infinite}
+.science-banner .data-point{fill:#587d94;animation:scientificPulse 3.4s ease-in-out infinite}
+@keyframes scientificOrbit{to{rotate:360deg}}
+@keyframes scientificPulse{50%{opacity:.30;scale:1.25}}
+.section-intro .item-description{font-size:1.04rem;line-height:1.7}
+.right-column .item{margin-bottom:23px}
+@media(max-width:768px){.science-banner{margin:26px auto 0;height:125px}.science-banner__caption{font-size:8px;letter-spacing:0}.science-banner__graphic{height:112px}.science-banner__caption span{padding:0 6px}}
+@media(max-width:480px){.science-banner__caption{font-size:7px}.science-banner__caption span{padding:0 2px}.science-banner{height:116px}}
+@media(prefers-reduced-motion:reduce){.science-banner *{animation:none!important}}
+@media print{.science-banner{display:none}.modal,.print-button{display:none!important}.resume-container{box-shadow:none;border-top:0}body{background:#fff;padding:0}.section{break-inside:avoid}}
+
+/* === Editorial portfolio redesign — November 2026 === */
+:root{--navy:#183247;--ink:#24313a;--muted:#63737e;--line:#dce2e4;--cream:#f7f7f3;--accent:#bd8356}
+html{scroll-behavior:smooth}
+body{background:#eef1f0;color:var(--ink);padding:28px 18px;font-size:15px}
+body:before{opacity:.12}
+.resume-container{max-width:1150px;border:1px solid #d9e0e1;border-top:0;padding:0 55px 30px;box-shadow:0 28px 70px rgba(19,44,60,.1);overflow:hidden}
+.portfolio-hero{padding-bottom:35px;margin-bottom:42px;border-bottom:1px solid #c8d6d9;text-align:left}
+.hero-topline{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:23px 0;border-bottom:1px solid var(--line)}
+.hero-index{font:500 11px/1.6 'IBM Plex Mono',monospace;letter-spacing:.08em;color:#33566b}
+.muted-index{color:#a0abb1}
+.hero-nav{display:flex;gap:22px;flex-wrap:wrap}.hero-nav a{font:400 11px/1.5 'IBM Plex Mono',monospace;color:#5a6d76;text-decoration:none;border-bottom:1px solid transparent;padding:4px 0}.hero-nav a:hover,.hero-nav a:focus-visible{border-color:#45667b;color:#183247}
+.hero-layout{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(270px,.9fr);gap:55px;padding:53px 0 32px;align-items:center}
+.hero-kicker{color:#537285;font:500 10px/1.7 'IBM Plex Mono',monospace;letter-spacing:.11em;margin-bottom:21px}
+.hero-copy .name{font:700 clamp(42px,5.1vw,65px)/1.09 'Libre Caslon Text',Georgia,serif;letter-spacing:-.045em;color:#1f3341;margin-bottom:3px;text-transform:none}
+.hero-patronymic{font:400 11px/1.6 'IBM Plex Mono',monospace;color:#84939b;letter-spacing:.025em;margin:15px 0 25px}
+.hero-profession{font:700 23px/1.35 'Libre Caslon Text',Georgia,serif;color:#3b5668;max-width:470px;margin-bottom:17px}
+.hero-description{font-size:15px;line-height:1.75;max-width:480px;color:#4b5a63}
+.hero-actions{display:flex;flex-direction:column;align-items:flex-start;gap:13px;margin-top:25px}.hero-main-link{display:inline-flex;align-items:center;gap:18px;background:var(--navy);color:#fff!important;text-decoration:none;font:500 12px/1.3 'IBM Plex Mono',monospace;padding:14px 18px;border-radius:2px;transition:background .2s,transform .2s}.hero-main-link:hover{background:#355a71;transform:translateY(-2px)}.hero-interview-note{font-size:12px;color:#71818a;font-style:italic}
+.hero-aside{align-self:stretch;display:flex;flex-direction:column;gap:20px;justify-content:center}.hero-photo{height:238px;overflow:hidden;background:#dfe6e5;border-radius:2px;position:relative}.hero-photo:before{content:'';position:absolute;inset:0;border:1px solid rgba(16,44,61,.12);z-index:2;pointer-events:none}.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center 33%;filter:grayscale(22%);display:block}
+.hero-diagram{background:#f4f7f7;border:1px solid #dfe9ec;padding:11px 13px 5px;overflow:hidden}.diagram-label{font:500 9px/1.6 'IBM Plex Mono',monospace;color:#607c8d;letter-spacing:.06em;display:flex;justify-content:space-between;gap:8px}.hero-diagram svg{width:100%;height:auto;display:block;max-height:162px}.diagram-curve{animation:curveReveal 3.6s ease-out both;transform-origin:left center}.curve-guide{opacity:.35}.oscillator-point{filter:drop-shadow(0 0 3px rgba(207,147,93,.35))}
+.hero-bottomline{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;border-top:1px solid var(--line);padding:22px 0 0}.hero-bottomline div{display:flex;flex-direction:column;gap:5px}.hero-bottomline strong{font:500 15px/1.2 'IBM Plex Mono',monospace;color:#29485c}.hero-bottomline span{font-size:11px;color:#7b8a92;line-height:1.45}
+.content{margin-top:0;align-items:flex-start}.left-column{flex:0 0 29%;padding-right:34px;border-right:1px solid var(--line);text-align:left}.right-column{flex:1;padding-left:44px;min-width:0}.left-column .section-title{text-align:left}.left-column .section-title:after{left:0;right:auto}.section{margin-bottom:33px;scroll-margin-top:25px}.section-title{font:500 13px/1.5 'IBM Plex Mono',monospace;letter-spacing:.055em;color:#254d62;margin-bottom:17px;padding-bottom:10px}.section-title:after{height:1px;width:52px!important;background:#9eb6bd}.item{margin-bottom:20px}.item-title{font-size:16px;line-height:1.45;color:#27475a;margin-bottom:5px}.item-description{font-size:14.5px;line-height:1.7;color:#4c565c}.item-subtitle{font-size:13px;color:#73828b}.left-column .contact-info li{flex-direction:row;justify-content:flex-start;margin-bottom:12px;font-size:12px;overflow-wrap:anywhere}.contact-info a{color:#345972;text-decoration:none;border-bottom:1px solid #c8d6dc}.contact-info a:hover{border-color:#345972}.skill-list li{font-size:13px;line-height:1.55;padding-left:0;padding-right:0;margin-bottom:10px}.skill-list li:before{display:none}
+#profile>.item-description{font-size:16px;line-height:1.75;color:#374b56}
+#experience .item{padding-left:18px;border-left:2px solid #d3e0e4}
+.document-item{transition:transform .2s ease,box-shadow .2s ease}.document-item:hover{transform:translateY(-3px)}
+.achievements-lead{color:#5e707b;font-size:14px;line-height:1.6;margin-bottom:15px}
+.achievements-disclosure{border:1px solid #d6e0e3;background:#f8faf9;border-radius:3px;overflow:hidden}
+.achievements-disclosure>summary{display:flex;align-items:center;gap:17px;cursor:pointer;padding:19px 20px;list-style:none;background:#f3f7f7;transition:background .2s}
+.achievements-disclosure>summary::-webkit-details-marker,.secondary-disclosure>summary::-webkit-details-marker{display:none}
+.achievements-disclosure>summary:hover{background:#ebf1f2}.achievements-disclosure[open]>summary{border-bottom:1px solid #d6e0e3}
+.summary-icon{border:1px solid #c7d6da;color:#54798a;width:34px;height:34px;display:grid;place-items:center;font-size:17px;flex:none;transition:transform .2s}.achievements-disclosure[open] .summary-icon{transform:rotate(180deg)}
+.summary-content{display:flex;flex-direction:column;gap:4px;flex:1;min-width:0}.summary-content strong{font:700 15px/1.4 'Libre Caslon Text',Georgia,serif;color:#294757}.summary-content small{font-size:12px;color:#71828c}.summary-action{font:500 10px/1.5 'IBM Plex Mono',monospace;color:#527184;white-space:nowrap}.summary-action span{font-size:16px;margin-left:5px}.achievements-disclosure[open] .summary-action span{display:inline-block;transform:rotate(45deg)}.disclosure-body{padding:14px;max-width:100%;overflow-x:auto}.achievements-table{width:100%;min-width:530px;font-size:12px}.achievements-table th{font-size:11px}.achievements-table td{padding:10px 8px;vertical-align:middle}
+.supplementary-section{border-top:1px solid #e1e7e9;padding-top:16px}.supplementary-section .section-title{font-size:12px;margin-bottom:5px}.supplementary-section .section-title:after{display:none}.secondary-disclosure{font-size:13px}.secondary-disclosure>summary{color:#496b7b;cursor:pointer;font:400 12px/1.4 'IBM Plex Mono',monospace;padding:8px 0 12px}.secondary-disclosure[open]>summary{margin-bottom:14px}.secondary-disclosure .document-gallery{margin-top:12px}
+.signature{font-size:12px;color:#89969c}.print-button{font-family:'IBM Plex Mono',monospace!important;font-size:11px!important}
+@keyframes curveReveal{from{opacity:.25;transform:scaleX(.86)}to{opacity:1;transform:scaleX(1)}}
+@media(max-width:900px){.resume-container{padding:0 32px 25px}.hero-layout{gap:27px}.hero-nav{gap:12px}.hero-copy .name{font-size:48px}.right-column{padding-left:27px}.left-column{padding-right:24px}}
+@media(max-width:700px){body{padding:0;background:#fff}.resume-container{padding:0 20px 25px;box-shadow:none;border:0}.hero-topline{align-items:flex-start;flex-direction:column;gap:12px}.hero-layout{grid-template-columns:1fr;gap:24px;padding-top:35px}.hero-copy .name{font-size:51px}.hero-aside{display:grid;grid-template-columns:minmax(100px,.8fr) minmax(180px,1.2fr);gap:12px}.hero-photo{height:170px}.hero-diagram{align-self:stretch;display:flex;flex-direction:column;justify-content:center}.hero-diagram svg{max-height:140px}.hero-bottomline{gap:12px}.content{display:block}.left-column,.right-column{width:100%;padding:0;text-align:left;border:0}.left-column{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 22px;border-bottom:1px solid var(--line);margin-bottom:28px}.left-column .section{margin-bottom:18px}.left-column .section-title{text-align:left}.left-column .section-title:after{left:0}.right-column{padding:0}.section{margin-bottom:29px}}
+@media(max-width:480px){.resume-container{padding:0 15px 20px}.hero-nav{gap:10px}.hero-nav a{font-size:10px}.hero-copy .name{font-size:43px}.hero-profession{font-size:20px}.hero-description{font-size:14px}.hero-aside{display:block}.hero-photo{height:185px;margin-bottom:11px}.hero-diagram{max-width:100%}.hero-bottomline{grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.hero-bottomline strong{font-size:12px}.hero-bottomline span{font-size:10px}.left-column{grid-template-columns:1fr}.summary-action{display:none}.achievements-disclosure>summary{padding:14px;gap:9px}.summary-content strong{font-size:13px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero-diagram animateMotion{display:none}.diagram-curve,.hero-main-link,.document-item{animation:none!important;transition:none!important}}
+@media print{body{padding:0!important;background:#fff}.resume-container{padding:0 20px!important;max-width:none}.hero-diagram{display:none}.hero-layout{grid-template-columns:1fr 130px;padding:12px 0}.hero-photo{height:115px}.hero-topline,.hero-actions{display:none}.hero-copy .name{font-size:32px}.hero-description{font-size:11px}.hero-bottomline{padding:12px 0}.content{display:flex!important}.left-column{flex:0 0 29%;border-right:1px solid #ddd;padding-right:20px}.right-column{padding-left:22px}.achievements-disclosure:not([open]) .disclosure-body,.secondary-disclosure:not([open])>:not(summary){display:none}.print-button{display:none!important}}
+
+/* Редакция 3: читаемая типографика для экранного портфолио.
+   Увеличена вся информационная иерархия, не только основной текст. */
+@media screen {
+  body { font-size: 17px; }
+  .resume-container { max-width: 1200px; }
+  .hero-index, .hero-nav a, .hero-patronymic { font-size: 13px; }
+  .hero-kicker { font-size: 12px; }
+  .hero-profession { font-size: 26px; }
+  .hero-description { font-size: 18px; line-height: 1.72; }
+  .hero-main-link { font-size: 13px; }
+  .hero-interview-note { font-size: 14px; }
+  .diagram-label { font-size: 11px; }
+  .hero-bottomline strong { font-size: 17px; }
+  .hero-bottomline span { font-size: 13px; }
+  .section-title { font-size: 16px; line-height: 1.5; }
+  .item-title { font-size: 19px; }
+  .item-description { font-size: 17px; line-height: 1.76; }
+  .item-subtitle { font-size: 15px; }
+  #profile > .item-description { font-size: 18px; }
+  .left-column .contact-info li { font-size: 15px; line-height: 1.55; }
+  .skill-list li { font-size: 15.5px; line-height: 1.65; }
+  .achievements-lead { font-size: 16px; }
+  .summary-content strong { font-size: 18px; }
+  .summary-content small { font-size: 14px; }
+  .summary-action { font-size: 12px; }
+  .achievements-table { font-size: 14px; }
+  .achievements-table th { font-size: 13px; }
+  .achievements-table td { padding: 12px 10px; line-height: 1.55; }
+  .supplementary-section .section-title { font-size: 15px; }
+  .secondary-disclosure, .secondary-disclosure > summary { font-size: 15px; }
+  .signature { font-size: 14px; }
+  .print-button { font-size: 13px !important; }
+}
+@media screen and (max-width: 700px) {
+  .hero-description { font-size: 17px; }
+  .item-description { font-size: 16.5px; }
+  .skill-list li { font-size: 15.5px; }
+  .hero-bottomline strong { font-size: 15px; }
+  .hero-bottomline span { font-size: 12px; }
+}
+@media screen and (max-width: 480px) {
+  .hero-nav a { font-size: 12px; }
+  .hero-profession { font-size: 23px; }
+  .hero-description { font-size: 17px; }
+  .hero-bottomline { gap: 10px; }
+  .hero-bottomline strong { font-size: 14px; }
+  .hero-bottomline span { font-size: 11.5px; }
+  .summary-content strong { font-size: 16.5px; }
+  .summary-content small { font-size: 13.5px; }
+}
+
+
+/* ==============================================================
+   АКАDEМИЧЕСКИЙ ПРЕМИУМ · 2026
+   Цель: единая визуальная система без изменения контента.
+   Бумажная палитра, внятная типографика, деликатные акценты.
+   =============================================================== */
+:root {
+  --premium-paper: #f7f5ef;
+  --premium-ivory: #fffdfa;
+  --premium-navy: #253e50;
+  --premium-ink: #252b30;
+  --premium-muted: #58636b;
+  --premium-hairline: #d9d8d0;
+  --premium-accent: #9b8060;
+}
+html { scroll-behavior: smooth; }
+body {
+  color: var(--premium-ink);
+  background: var(--premium-paper);
+  font-family: 'Libre Caslon Text', Georgia, 'Times New Roman', serif;
+  font-size: 18px;
+  line-height: 1.68;
+  padding: 40px 24px;
+}
+body::before { opacity: .10; }
+.resume-container {
+  max-width: 1260px;
+  border: 1px solid #e4e1d9;
+  border-top: 5px solid var(--premium-navy);
+  background: var(--premium-ivory);
+  box-shadow: 0 25px 70px rgba(35,43,47,.075), 0 3px 8px rgba(35,43,47,.025);
+  padding: 0 65px 55px;
+}
+/* Титульная композиция */
+.hero-topline { border-color: var(--premium-hairline); padding: 29px 0 25px; }
+.hero-index, .hero-nav a, .hero-kicker, .hero-patronymic,
+.diagram-label, .hero-bottomline strong, .section-title,
+.item-date, .summary-action, .secondary-disclosure > summary {
+  font-family: 'IBM Plex Mono', 'Courier New', monospace;
+}
+.hero-index { color: #53616b; font-size: 13px; letter-spacing: .045em; }
+.hero-nav { gap: 25px; }
+.hero-nav a { font-size: 13px; color: var(--premium-muted); transition: color .2s; }
+.hero-nav a:hover, .hero-nav a:focus-visible { color: var(--premium-navy); border-bottom-color: var(--premium-accent); }
+.hero-layout {
+  grid-template-columns: minmax(0, 1.30fr) minmax(285px,.78fr);
+  gap: clamp(30px, 5vw, 76px);
+  padding: 55px 0 38px;
+}
+.hero-kicker { color: #8e7251; font-size: 12.5px; letter-spacing: .075em; margin-bottom: 20px; }
+.hero-copy .name {
+  font-family: 'Libre Caslon Text', Georgia, serif;
+  font-size: clamp(46px, 4.7vw, 68px);
+  line-height: 1.11;
+  letter-spacing: -.036em;
+  color: #1e3343;
+}
+.hero-patronymic { color: #6b747b; font-size: 14px; margin: 15px 0 23px; }
+.hero-profession { font-size: 29px; line-height: 1.38; color: #2e4c60; max-width: 650px; margin-bottom: 18px; }
+.hero-description { font-size: 18px; line-height: 1.75; max-width: 625px; color: #45525b; }
+.hero-actions { gap: 16px; margin-top: 29px; }
+.hero-main-link {
+  font-size: 13.5px;
+  letter-spacing: .015em;
+  background: var(--premium-navy);
+  border-radius: 3px;
+  padding: 15px 22px;
+  box-shadow: 0 5px 13px rgba(37,62,80,.11);
+}
+.hero-main-link:hover, .hero-main-link:focus-visible { background: #34566e; transform: translateY(-1px); }
+.hero-interview-note { font-size: 15px; line-height: 1.5; color: #68727a; }
+.hero-aside { gap: 16px; }
+.hero-photo {
+  height: 274px;
+  background: #e8e5df;
+  border-radius: 3px;
+  box-shadow: 0 9px 22px rgba(35,43,47,.07);
+}
+.hero-photo img { filter: grayscale(14%) sepia(5%); }
+.hero-photo::before { border-color: rgba(25,43,55,.18); }
+.hero-diagram { background: #f3f2ed; border: 1px solid #e6e2d8; border-radius: 3px; padding: 15px 15px 8px; }
+.diagram-label { font-size: 11px; color: #667783; }
+.hero-bottomline { border-color: var(--premium-hairline); padding: 26px 0 3px; gap: 30px; }
+.hero-bottomline strong { color: var(--premium-navy); font-size: 18px; line-height: 1.4; }
+.hero-bottomline span { color: #626c72; font-size: 14px; line-height: 1.5; }
+/* Разделы и колонки */
+.content { margin-top: 45px; align-items: flex-start; }
+.left-column { flex: 0 0 30%; padding-right: 37px; border-right: 1px solid var(--premium-hairline); }
+.right-column { padding-left: 51px; }
+.section { margin-bottom: 45px; }
+.section-title, .supplementary-section .section-title {
+  color: var(--premium-navy);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.43;
+  letter-spacing: .015em;
+  margin-bottom: 24px;
+  padding-bottom: 13px;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+.section-title::after { background: var(--premium-accent); height: 2px; width: 65px !important; }
+.item { margin-bottom: 27px; }
+.item-title { color: var(--premium-navy); font-size: 20px; line-height: 1.45; margin-bottom: 9px; }
+.item-description { color: #37424a; font-size: 18px; line-height: 1.74; }
+.item-subtitle { color: #58666e; font-size: 16px; line-height: 1.6; }
+.item-date { font-size: 14px; color: #5a6c77; }
+#profile > .item-description { font-size: 19px; line-height: 1.78; color: #303c44; }
+#experience .item { border-left: 2px solid #c9b298; padding-left: 22px; }
+.left-column .contact-info li { font-size: 16px; line-height: 1.65; margin-bottom: 15px; }
+.contact-info a { color: #31566d; border-bottom-color: #c2c5c2; }
+.skill-list li { font-size: 16.5px; line-height: 1.72; margin-bottom: 13px; }
+/* Документы и фотографии */
+.document-gallery { gap: 15px; }
+.document-item { border-radius: 4px; }
+.document-item:hover { transform: translateY(-2px); box-shadow: 0 8px 18px rgba(37,62,80,.12); }
+.document-caption { font-size: 14.5px; line-height: 1.52; color: #4d5c65; }
+/* Достижения: читаемость и выразительный, но спокойный контроль раскрытия */
+.achievements-lead { font-size: 17px; line-height: 1.7; color: #475860; margin-bottom: 20px; }
+.achievements-disclosure { border: 1px solid #dedbd2; border-radius: 4px; background: #fffefa; }
+.achievements-disclosure > summary { background: #f3f1ea; padding: 23px 22px; gap: 18px; }
+.achievements-disclosure > summary:hover, .achievements-disclosure > summary:focus-visible { background: #eeece4; }
+.achievements-disclosure[open] > summary { border-bottom-color: #dedbd2; }
+.summary-icon { border-color: #d0c9bd; color: #7d684f; width: 40px; height: 40px; font-size: 19px; }
+.summary-content strong { color: var(--premium-navy); font-size: 20px; line-height: 1.4; }
+.summary-content small { color: #606f76; font-size: 15px; line-height: 1.52; }
+.summary-action { color: #586a75; font-size: 13px; }
+.disclosure-body { padding: 19px 18px; }
+.achievements-table { font-size: 15.5px; min-width: 520px; }
+.achievements-table th { color: var(--premium-navy); background: #f3f1ea; font-size: 14px; }
+.achievements-table td { padding: 13px 10px; line-height: 1.55; }
+.achievements-table tr:nth-child(even) { background: #faf9f5; }
+.achievements-table tr:hover { background: #f3f0e9; }
+.supplementary-section { border-top-color: var(--premium-hairline); padding-top: 24px; }
+.supplementary-section .section-title { font-size: 17px; margin-bottom: 10px; }
+.secondary-disclosure { font-size: 17px; }
+.secondary-disclosure > summary { color: #426079; font-size: 15.5px; line-height: 1.55; padding: 12px 0 17px; }
+.signature { font-size: 15px; color: #6c757b; }
+.print-button { font-size: 14px !important; }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid #927453; outline-offset: 4px; }
+/* Адаптив: сохраняем крупный текст и достаточно свободного пространства */
+@media screen and (max-width: 1020px) {
+  .resume-container { padding-left: 39px; padding-right: 39px; }
+  .hero-layout { gap: 30px; }
+  .hero-copy .name { font-size: clamp(44px,5vw,58px); }
+  .hero-profession { font-size: 25px; }
+  .left-column { padding-right: 24px; }
+  .right-column { padding-left: 31px; }
+}
+@media screen and (max-width: 760px) {
+  body { padding: 0; background: var(--premium-ivory); }
+  .resume-container { border: 0; border-top: 4px solid var(--premium-navy); box-shadow: none; padding: 0 26px 35px; }
+  .hero-layout { grid-template-columns: 1fr; padding: 37px 0 28px; }
+  .hero-aside { display: grid; grid-template-columns: minmax(130px,.85fr) minmax(180px,1.15fr); align-items: stretch; gap: 15px; }
+  .hero-photo { height: 210px; }
+  .hero-diagram { min-width: 0; }
+  .hero-bottomline { gap: 14px; }
+  .content { display: block; margin-top: 35px; }
+  .left-column, .right-column { border-right: 0; padding: 0; }
+  .left-column { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); column-gap: 28px; border-bottom: 1px solid var(--premium-hairline); margin-bottom: 35px; }
+  .left-column .section-title { text-align: left; }
+  .left-column .section { margin-bottom: 25px; }
+  .section { margin-bottom: 35px; }
+}
+@media screen and (max-width: 520px) {
+  .resume-container { padding: 0 19px 29px; }
+  .hero-topline { padding: 23px 0 20px; }
+  .hero-nav { gap: 15px; }
+  .hero-nav a { font-size: 12.5px; }
+  .hero-copy .name { font-size: clamp(41px, 11vw, 51px); }
+  .hero-profession { font-size: 24px; }
+  .hero-description { font-size: 17px; }
+  .hero-aside { display: block; }
+  .hero-photo { height: 210px; margin-bottom: 14px; }
+  .hero-bottomline { grid-template-columns: 1fr; gap: 15px; padding-top: 19px; }
+  .hero-bottomline div { flex-direction: row; flex-wrap: wrap; gap: 5px 11px; align-items: baseline; }
+  .hero-bottomline strong { font-size: 16.5px; }
+  .hero-bottomline span { font-size: 14px; }
+  .left-column { grid-template-columns: 1fr; gap: 0; }
+  .section-title, .supplementary-section .section-title { font-size: 17px; }
+  .item-title { font-size: 19px; }
+  .item-description { font-size: 17px; }
+  #profile > .item-description { font-size: 18px; }
+  .skill-list li { font-size: 16px; }
+  .summary-content strong { font-size: 18px; }
+  .summary-content small { font-size: 14.5px; }
+  .summary-action { display: none; }
+  .achievements-disclosure > summary { gap: 11px; padding: 17px 14px; }
+  .disclosure-body { padding: 12px; }
+}
+@media screen and (prefers-reduced-motion: reduce) {
+  *,*::before,*::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
+@media print {
+  body { background: #fff; color: #111; }
+  .resume-container { box-shadow: none; border: 0; background: #fff; }
+  .hero-layout { padding-top: 15px; }
+  .hero-copy .name { color: #111; }
+  .section-title { color: #202f3b; }
+}
