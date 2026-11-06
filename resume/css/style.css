@@ -659,3 +659,255 @@ body:before{opacity:.12}
 @media(max-width:480px){.resume-container{padding:0 15px 20px}.hero-nav{gap:10px}.hero-nav a{font-size:10px}.hero-copy .name{font-size:43px}.hero-profession{font-size:20px}.hero-description{font-size:14px}.hero-aside{display:block}.hero-photo{height:185px;margin-bottom:11px}.hero-diagram{max-width:100%}.hero-bottomline{grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.hero-bottomline strong{font-size:12px}.hero-bottomline span{font-size:10px}.left-column{grid-template-columns:1fr}.summary-action{display:none}.achievements-disclosure>summary{padding:14px;gap:9px}.summary-content strong{font-size:13px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero-diagram animateMotion{display:none}.diagram-curve,.hero-main-link,.document-item{animation:none!important;transition:none!important}}
 @media print{body{padding:0!important;background:#fff}.resume-container{padding:0 20px!important;max-width:none}.hero-diagram{display:none}.hero-layout{grid-template-columns:1fr 130px;padding:12px 0}.hero-photo{height:115px}.hero-topline,.hero-actions{display:none}.hero-copy .name{font-size:32px}.hero-description{font-size:11px}.hero-bottomline{padding:12px 0}.content{display:flex!important}.left-column{flex:0 0 29%;border-right:1px solid #ddd;padding-right:20px}.right-column{padding-left:22px}.achievements-disclosure:not([open]) .disclosure-body,.secondary-disclosure:not([open])>:not(summary){display:none}.print-button{display:none!important}}
+
+/* Редакция 3: читаемая типографика для экранного портфолио.
+   Увеличена вся информационная иерархия, не только основной текст. */
+@media screen {
+  body { font-size: 17px; }
+  .resume-container { max-width: 1200px; }
+  .hero-index, .hero-nav a, .hero-patronymic { font-size: 13px; }
+  .hero-kicker { font-size: 12px; }
+  .hero-profession { font-size: 26px; }
+  .hero-description { font-size: 18px; line-height: 1.72; }
+  .hero-main-link { font-size: 13px; }
+  .hero-interview-note { font-size: 14px; }
+  .diagram-label { font-size: 11px; }
+  .hero-bottomline strong { font-size: 17px; }
+  .hero-bottomline span { font-size: 13px; }
+  .section-title { font-size: 16px; line-height: 1.5; }
+  .item-title { font-size: 19px; }
+  .item-description { font-size: 17px; line-height: 1.76; }
+  .item-subtitle { font-size: 15px; }
+  #profile > .item-description { font-size: 18px; }
+  .left-column .contact-info li { font-size: 15px; line-height: 1.55; }
+  .skill-list li { font-size: 15.5px; line-height: 1.65; }
+  .achievements-lead { font-size: 16px; }
+  .summary-content strong { font-size: 18px; }
+  .summary-content small { font-size: 14px; }
+  .summary-action { font-size: 12px; }
+  .achievements-table { font-size: 14px; }
+  .achievements-table th { font-size: 13px; }
+  .achievements-table td { padding: 12px 10px; line-height: 1.55; }
+  .supplementary-section .section-title { font-size: 15px; }
+  .secondary-disclosure, .secondary-disclosure > summary { font-size: 15px; }
+  .signature { font-size: 14px; }
+  .print-button { font-size: 13px !important; }
+}
+@media screen and (max-width: 700px) {
+  .hero-description { font-size: 17px; }
+  .item-description { font-size: 16.5px; }
+  .skill-list li { font-size: 15.5px; }
+  .hero-bottomline strong { font-size: 15px; }
+  .hero-bottomline span { font-size: 12px; }
+}
+@media screen and (max-width: 480px) {
+  .hero-nav a { font-size: 12px; }
+  .hero-profession { font-size: 23px; }
+  .hero-description { font-size: 17px; }
+  .hero-bottomline { gap: 10px; }
+  .hero-bottomline strong { font-size: 14px; }
+  .hero-bottomline span { font-size: 11.5px; }
+  .summary-content strong { font-size: 16.5px; }
+  .summary-content small { font-size: 13.5px; }
+}
+
+
+/* ==============================================================
+   АКАDEМИЧЕСКИЙ ПРЕМИУМ · 2026
+   Цель: единая визуальная система без изменения контента.
+   Бумажная палитра, внятная типографика, деликатные акценты.
+   =============================================================== */
+:root {
+  --premium-paper: #f7f5ef;
+  --premium-ivory: #fffdfa;
+  --premium-navy: #253e50;
+  --premium-ink: #252b30;
+  --premium-muted: #58636b;
+  --premium-hairline: #d9d8d0;
+  --premium-accent: #9b8060;
+}
+html { scroll-behavior: smooth; }
+body {
+  color: var(--premium-ink);
+  background: var(--premium-paper);
+  font-family: 'Libre Caslon Text', Georgia, 'Times New Roman', serif;
+  font-size: 18px;
+  line-height: 1.68;
+  padding: 40px 24px;
+}
+body::before { opacity: .10; }
+.resume-container {
+  max-width: 1260px;
+  border: 1px solid #e4e1d9;
+  border-top: 5px solid var(--premium-navy);
+  background: var(--premium-ivory);
+  box-shadow: 0 25px 70px rgba(35,43,47,.075), 0 3px 8px rgba(35,43,47,.025);
+  padding: 0 65px 55px;
+}
+/* Титульная композиция */
+.hero-topline { border-color: var(--premium-hairline); padding: 29px 0 25px; }
+.hero-index, .hero-nav a, .hero-kicker, .hero-patronymic,
+.diagram-label, .hero-bottomline strong, .section-title,
+.item-date, .summary-action, .secondary-disclosure > summary {
+  font-family: 'IBM Plex Mono', 'Courier New', monospace;
+}
+.hero-index { color: #53616b; font-size: 13px; letter-spacing: .045em; }
+.hero-nav { gap: 25px; }
+.hero-nav a { font-size: 13px; color: var(--premium-muted); transition: color .2s; }
+.hero-nav a:hover, .hero-nav a:focus-visible { color: var(--premium-navy); border-bottom-color: var(--premium-accent); }
+.hero-layout {
+  grid-template-columns: minmax(0, 1.30fr) minmax(285px,.78fr);
+  gap: clamp(30px, 5vw, 76px);
+  padding: 55px 0 38px;
+}
+.hero-kicker { color: #8e7251; font-size: 12.5px; letter-spacing: .075em; margin-bottom: 20px; }
+.hero-copy .name {
+  font-family: 'Libre Caslon Text', Georgia, serif;
+  font-size: clamp(46px, 4.7vw, 68px);
+  line-height: 1.11;
+  letter-spacing: -.036em;
+  color: #1e3343;
+}
+.hero-patronymic { color: #6b747b; font-size: 14px; margin: 15px 0 23px; }
+.hero-profession { font-size: 29px; line-height: 1.38; color: #2e4c60; max-width: 650px; margin-bottom: 18px; }
+.hero-description { font-size: 18px; line-height: 1.75; max-width: 625px; color: #45525b; }
+.hero-actions { gap: 16px; margin-top: 29px; }
+.hero-main-link {
+  font-size: 13.5px;
+  letter-spacing: .015em;
+  background: var(--premium-navy);
+  border-radius: 3px;
+  padding: 15px 22px;
+  box-shadow: 0 5px 13px rgba(37,62,80,.11);
+}
+.hero-main-link:hover, .hero-main-link:focus-visible { background: #34566e; transform: translateY(-1px); }
+.hero-interview-note { font-size: 15px; line-height: 1.5; color: #68727a; }
+.hero-aside { gap: 16px; }
+.hero-photo {
+  height: 274px;
+  background: #e8e5df;
+  border-radius: 3px;
+  box-shadow: 0 9px 22px rgba(35,43,47,.07);
+}
+.hero-photo img { filter: grayscale(14%) sepia(5%); }
+.hero-photo::before { border-color: rgba(25,43,55,.18); }
+.hero-diagram { background: #f3f2ed; border: 1px solid #e6e2d8; border-radius: 3px; padding: 15px 15px 8px; }
+.diagram-label { font-size: 11px; color: #667783; }
+.hero-bottomline { border-color: var(--premium-hairline); padding: 26px 0 3px; gap: 30px; }
+.hero-bottomline strong { color: var(--premium-navy); font-size: 18px; line-height: 1.4; }
+.hero-bottomline span { color: #626c72; font-size: 14px; line-height: 1.5; }
+/* Разделы и колонки */
+.content { margin-top: 45px; align-items: flex-start; }
+.left-column { flex: 0 0 30%; padding-right: 37px; border-right: 1px solid var(--premium-hairline); }
+.right-column { padding-left: 51px; }
+.section { margin-bottom: 45px; }
+.section-title, .supplementary-section .section-title {
+  color: var(--premium-navy);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.43;
+  letter-spacing: .015em;
+  margin-bottom: 24px;
+  padding-bottom: 13px;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+.section-title::after { background: var(--premium-accent); height: 2px; width: 65px !important; }
+.item { margin-bottom: 27px; }
+.item-title { color: var(--premium-navy); font-size: 20px; line-height: 1.45; margin-bottom: 9px; }
+.item-description { color: #37424a; font-size: 18px; line-height: 1.74; }
+.item-subtitle { color: #58666e; font-size: 16px; line-height: 1.6; }
+.item-date { font-size: 14px; color: #5a6c77; }
+#profile > .item-description { font-size: 19px; line-height: 1.78; color: #303c44; }
+#experience .item { border-left: 2px solid #c9b298; padding-left: 22px; }
+.left-column .contact-info li { font-size: 16px; line-height: 1.65; margin-bottom: 15px; }
+.contact-info a { color: #31566d; border-bottom-color: #c2c5c2; }
+.skill-list li { font-size: 16.5px; line-height: 1.72; margin-bottom: 13px; }
+/* Документы и фотографии */
+.document-gallery { gap: 15px; }
+.document-item { border-radius: 4px; }
+.document-item:hover { transform: translateY(-2px); box-shadow: 0 8px 18px rgba(37,62,80,.12); }
+.document-caption { font-size: 14.5px; line-height: 1.52; color: #4d5c65; }
+/* Достижения: читаемость и выразительный, но спокойный контроль раскрытия */
+.achievements-lead { font-size: 17px; line-height: 1.7; color: #475860; margin-bottom: 20px; }
+.achievements-disclosure { border: 1px solid #dedbd2; border-radius: 4px; background: #fffefa; }
+.achievements-disclosure > summary { background: #f3f1ea; padding: 23px 22px; gap: 18px; }
+.achievements-disclosure > summary:hover, .achievements-disclosure > summary:focus-visible { background: #eeece4; }
+.achievements-disclosure[open] > summary { border-bottom-color: #dedbd2; }
+.summary-icon { border-color: #d0c9bd; color: #7d684f; width: 40px; height: 40px; font-size: 19px; }
+.summary-content strong { color: var(--premium-navy); font-size: 20px; line-height: 1.4; }
+.summary-content small { color: #606f76; font-size: 15px; line-height: 1.52; }
+.summary-action { color: #586a75; font-size: 13px; }
+.disclosure-body { padding: 19px 18px; }
+.achievements-table { font-size: 15.5px; min-width: 520px; }
+.achievements-table th { color: var(--premium-navy); background: #f3f1ea; font-size: 14px; }
+.achievements-table td { padding: 13px 10px; line-height: 1.55; }
+.achievements-table tr:nth-child(even) { background: #faf9f5; }
+.achievements-table tr:hover { background: #f3f0e9; }
+.supplementary-section { border-top-color: var(--premium-hairline); padding-top: 24px; }
+.supplementary-section .section-title { font-size: 17px; margin-bottom: 10px; }
+.secondary-disclosure { font-size: 17px; }
+.secondary-disclosure > summary { color: #426079; font-size: 15.5px; line-height: 1.55; padding: 12px 0 17px; }
+.signature { font-size: 15px; color: #6c757b; }
+.print-button { font-size: 14px !important; }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid #927453; outline-offset: 4px; }
+/* Адаптив: сохраняем крупный текст и достаточно свободного пространства */
+@media screen and (max-width: 1020px) {
+  .resume-container { padding-left: 39px; padding-right: 39px; }
+  .hero-layout { gap: 30px; }
+  .hero-copy .name { font-size: clamp(44px,5vw,58px); }
+  .hero-profession { font-size: 25px; }
+  .left-column { padding-right: 24px; }
+  .right-column { padding-left: 31px; }
+}
+@media screen and (max-width: 760px) {
+  body { padding: 0; background: var(--premium-ivory); }
+  .resume-container { border: 0; border-top: 4px solid var(--premium-navy); box-shadow: none; padding: 0 26px 35px; }
+  .hero-layout { grid-template-columns: 1fr; padding: 37px 0 28px; }
+  .hero-aside { display: grid; grid-template-columns: minmax(130px,.85fr) minmax(180px,1.15fr); align-items: stretch; gap: 15px; }
+  .hero-photo { height: 210px; }
+  .hero-diagram { min-width: 0; }
+  .hero-bottomline { gap: 14px; }
+  .content { display: block; margin-top: 35px; }
+  .left-column, .right-column { border-right: 0; padding: 0; }
+  .left-column { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); column-gap: 28px; border-bottom: 1px solid var(--premium-hairline); margin-bottom: 35px; }
+  .left-column .section-title { text-align: left; }
+  .left-column .section { margin-bottom: 25px; }
+  .section { margin-bottom: 35px; }
+}
+@media screen and (max-width: 520px) {
+  .resume-container { padding: 0 19px 29px; }
+  .hero-topline { padding: 23px 0 20px; }
+  .hero-nav { gap: 15px; }
+  .hero-nav a { font-size: 12.5px; }
+  .hero-copy .name { font-size: clamp(41px, 11vw, 51px); }
+  .hero-profession { font-size: 24px; }
+  .hero-description { font-size: 17px; }
+  .hero-aside { display: block; }
+  .hero-photo { height: 210px; margin-bottom: 14px; }
+  .hero-bottomline { grid-template-columns: 1fr; gap: 15px; padding-top: 19px; }
+  .hero-bottomline div { flex-direction: row; flex-wrap: wrap; gap: 5px 11px; align-items: baseline; }
+  .hero-bottomline strong { font-size: 16.5px; }
+  .hero-bottomline span { font-size: 14px; }
+  .left-column { grid-template-columns: 1fr; gap: 0; }
+  .section-title, .supplementary-section .section-title { font-size: 17px; }
+  .item-title { font-size: 19px; }
+  .item-description { font-size: 17px; }
+  #profile > .item-description { font-size: 18px; }
+  .skill-list li { font-size: 16px; }
+  .summary-content strong { font-size: 18px; }
+  .summary-content small { font-size: 14.5px; }
+  .summary-action { display: none; }
+  .achievements-disclosure > summary { gap: 11px; padding: 17px 14px; }
+  .disclosure-body { padding: 12px; }
+}
+@media screen and (prefers-reduced-motion: reduce) {
+  *,*::before,*::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
+@media print {
+  body { background: #fff; color: #111; }
+  .resume-container { box-shadow: none; border: 0; background: #fff; }
+  .hero-layout { padding-top: 15px; }
+  .hero-copy .name { color: #111; }
+  .section-title { color: #202f3b; }
+}
